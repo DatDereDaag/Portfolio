@@ -1,0 +1,47 @@
+
+.hero-section{
+    position: absolute;
+    top: 120px;
+    left: 40px;
+    margin: 20px;
+    font-size: 40px;
+    color: white;
+
+    .hero-font{
+        font-family: "Expletus Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        letter-spacing: -1.74px;
+        line-height: 50px;
+        font-style:italic;
+    }
+
+    .hero-icons{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        padding: 5px;
+        font-size: 50px;
+
+        .linkedin-icon{
+            color: grey;
+        }
+
+        .linkedin-icon:hover{
+            color: #0077B5;
+        }
+
+        .github-icon{
+            color: grey;
+        }
+
+        .github-icon:hover{
+            color: white;
+        }
+    }
+}
+
+.content{
+
+}
