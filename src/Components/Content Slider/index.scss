@@ -10,19 +10,26 @@
     font-family: "Expletus Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     letter-spacing: 1px;
 
-    background: linear-gradient(35deg, #350202 0%, #520202 100%);
+    background: linear-gradient(35deg, #3f0404 0%, #651a01 100%);
     color: white;
 
     margin: 0px;
-    padding: 10px 50px;
+    padding: 10px 50px 35px 50px;
 
-    width: 20vw;
-    border-radius: 10px;
+    width: 32vw;
 
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    clip-path: polygon(0 0, 100% 0, 100% 41%, 0 100%);
+
+    box-shadow:
+      rgba(14, 63, 126, 0.04) 0px 0px 0px 1px,
+      rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px,
+      rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px,
+      rgba(42, 51, 70, 0.04) 0px 6px 6px -3px,
+      rgba(14, 63, 126, 0.04) 0px 12px 12px -6px,
+      rgba(14, 63, 126, 0.04) 0px 24px 24px -12px;
 
     z-index: 2;
   }
@@ -35,7 +42,11 @@
   .content-background {
     position: relative;
 
-    background-color: rgba(23, 19, 19, 0.85);
+    background: linear-gradient(
+      135deg,
+      rgba(17, 17, 20, 0.85) 0%,
+      rgba(32, 19, 19, 0.85) 100%
+    );
 
     height: 50vh;
     width: 100%;
