@@ -40,16 +40,16 @@ function Home() {
     <div>
       <div
         className="hero-background finisher-header"
-        style={{ width: "100%", height: "600px" }}
+        style={{ width: "100%", height: "60vh" }}
       ></div>
 
       <div className="hero-section">
         <h1 className="hero-font">Hi, I'm Arvesh,</h1>
-        <h1 className="hero-font">Full-Stack Developer.</h1>
+        <h1 className="hero-font bottom-hero-font">Full-Stack Developer.</h1>
         <div className="hero-icons">
           <a
             target="_blank"
-            rel="norefferer"
+            rel="noreferrer"
             className="linkedin-icon"
             href="https://www.linkedin.com/in/arvesh-gosine-01b67b2b2/"
           >
@@ -57,7 +57,7 @@ function Home() {
           </a>
           <a
             target="_blank"
-            rel="norefferer"
+            rel="noreferrer"
             className="github-icon"
             href="https://github.com/DatDereDaag"
           >

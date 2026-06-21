@@ -1,47 +1,48 @@
+.hero-section {
+  position: absolute;
+  top: 4vh;
+  left: 2vw;
+  margin: 20px;
+  font-size: 2rem;
+  color: white;
 
-.hero-section{
-    position: absolute;
-    top: 120px;
-    left: 40px;
-    margin: 20px;
-    font-size: 40px;
-    color: white;
+  .hero-font {
+    font-family: "Expletus Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    letter-spacing: -1.74px;
+    line-height: 50px;
+    font-style: italic;
+  }
 
-    .hero-font{
-        font-family: "Expletus Sans", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 600;
-        letter-spacing: -1.74px;
-        line-height: 50px;
-        font-style:italic;
+  .bottom-hero-font {
+    font-style: italic;
+  }
+
+  .hero-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding: 5px;
+    font-size: 50px;
+
+    .linkedin-icon {
+      color: grey;
+      transition: all 0.3s ease-in-out;
     }
 
-    .hero-icons{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 20px;
-        padding: 5px;
-        font-size: 50px;
-
-        .linkedin-icon{
-            color: grey;
-        }
-
-        .linkedin-icon:hover{
-            color: #0077B5;
-        }
-
-        .github-icon{
-            color: grey;
-        }
-
-        .github-icon:hover{
-            color: white;
-        }
+    .linkedin-icon:hover {
+      color: #0077b5;
     }
-}
 
-.content{
+    .github-icon {
+      color: grey;
+      transition: all 0.3s ease-in-out;
+    }
 
+    .github-icon:hover {
+      color: white;
+    }
+  }
 }
