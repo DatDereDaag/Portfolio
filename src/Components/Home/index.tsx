@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import ContentSlider from "../Content Slider";
 
 declare global {
   interface Window {
@@ -14,7 +15,7 @@ function Home() {
   useEffect(() => {
     if (window.FinisherHeader) {
       new window.FinisherHeader({
-        count: 15,
+        count: 20,
         size: { min: 500, max: 1500, pulse: 0.6 },
         speed: { x: { min: 0.8, max: 1 }, y: { min: 0.1, max: 0.6 } },
         colors: {
@@ -30,7 +31,7 @@ function Home() {
         },
         blending: "none",
         opacity: { center: 0.5, edge: 0.05 },
-        skew: -2.5,
+        skew: -9.0,
         shapes: ["c"],
       });
     }
@@ -40,11 +41,11 @@ function Home() {
     <div>
       <div
         className="hero-background finisher-header"
-        style={{ width: "100%", height: "60vh" }}
+        style={{ width: "100%", height: "75vh" }}
       ></div>
 
       <div className="hero-section">
-        <h1 className="hero-font">Hi, I'm Arvesh,</h1>
+        <h1 className="hero-font">Hi, I'm Mikisumresh,</h1>
         <h1 className="hero-font bottom-hero-font">Full-Stack Developer.</h1>
         <div className="hero-icons">
           <a
@@ -66,9 +67,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="content">
-        <h1>Projects</h1>
-      </div>
+      <ContentSlider />
     </div>
   );
 }
