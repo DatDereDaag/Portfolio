@@ -3,6 +3,7 @@ import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import ContentSlider from "../Content Slider";
+import NavMenu from "../Nav Menu";
 
 declare global {
   interface Window {
@@ -45,7 +46,7 @@ function Home() {
       ></div>
 
       <div className="hero-section">
-        <h1 className="hero-font">Hi, I'm .,</h1>
+        <h1 className="hero-font">Hi, I'm Mikisumresh,</h1>
         <h1 className="hero-font bottom-hero-font">Full-Stack Developer.</h1>
         <div className="hero-icons">
           <a
@@ -66,6 +67,8 @@ function Home() {
           </a>
         </div>
       </div>
+
+      <NavMenu />
 
       <ContentSlider />
     </div>
