@@ -6,17 +6,9 @@
   display: flex;
   flex-direction: column;
 
-  background: #cccccc;
-  background: radial-gradient(
-    circle,
-    rgba(85, 15, 43, 0.8) 0%,
-    rgba(73, 10, 10, 0) 70%,
-    rgba(86, 15, 15, 0) 100%
-  );
-
   padding: 2rem;
 
-  gap: 4px;
+  gap: 0.5rem;
   z-index: 3;
 
   .nav-item {
@@ -38,7 +30,11 @@
   }
 
   .nav-item:nth-child(even) {
-    transform: translateX(1vw);
+    transform: translateX(1vw) rotateZ(-3deg);
+  }
+
+  .nav-item:nth-child(odd) {
+    transform: rotateZ(-3deg);
   }
 }
 
