@@ -27,24 +27,42 @@
     padding: 10px clamp(2rem, 4vw, 4rem);
 
     z-index: 4;
+
+    transform: translateX(-1vw) rotateZ(-4deg);
   }
 
-  .nav-item:nth-child(even) {
-    transform: translateX(1vw) rotateZ(-3deg);
-  }
-
-  .nav-item:nth-child(odd) {
-    transform: rotateZ(-3deg);
+  .nav-item:nth-child(3),
+  .nav-item:nth-child(4) {
+    transform: translateX(4vw) rotateZ(-4deg);
   }
 }
 
 .nav-background {
   position: absolute;
 
-  &.right {
+  &.one {
+    clip-path: polygon(75% 0%, 0% 0%, 25% 100%, 100% 100%);
+    right: 4vw;
+    top: 2vh;
+
+    width: 18vw;
+    height: 36vh;
+
+    transform: rotateZ(90deg);
+    z-index: 2;
+
+    background: #0a0505;
+    background: linear-gradient(
+      240deg,
+      rgba(10, 5, 5, 0.83) 1%,
+      rgba(22, 4, 4, 0.73) 100%
+    );
+  }
+
+  &.two {
     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
     right: 1vw;
-    top: 1vh;
+    top: 2vh;
 
     width: 25vw;
     height: 38vh;
@@ -54,28 +72,28 @@
 
     background: #0a0505;
     background: linear-gradient(
-      240deg,
-      rgba(10, 5, 5, 0.73) 1%,
-      rgba(28, 26, 26, 0.93) 100%
+      3000deg,
+      rgba(23, 22, 22, 0.83) 1%,
+      rgba(12, 12, 16, 0.83) 100%
     );
   }
 
-  &.left {
-    clip-path: polygon(75% 0%, 0% 0%, 25% 100%, 100% 100%);
-    right: 4vw;
-    top: 1vh;
+  &.three {
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    right: 2vw;
+    top: 10vh;
 
-    width: 18vw;
-    height: 36vh;
+    width: 24vw;
+    height: 25vh;
 
-    transform: rotateZ(90deg);
-    z-index: 2.5;
+    transform: rotateZ(-160deg);
+    z-index: 1;
 
     background: #0a0505;
     background: linear-gradient(
       240deg,
-      rgba(10, 5, 5, 0.83) 1%,
-      rgba(28, 26, 26, 0.53) 100%
+      rgba(35, 1, 11, 0.93) 1%,
+      rgba(20, 14, 39, 0.83) 100%
     );
   }
 }
