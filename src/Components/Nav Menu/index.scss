@@ -1,3 +1,15 @@
+$nav-item-translate-default: -1vw;
+$nav-item-translate-shifted: 4vw;
+$nav-item-translate-shifted-hover: 5vw;
+$nav-item-rotation: -4deg;
+$nav-item-scale-hover: 1.03;
+$nav-item-scale-active: 1.08;
+$nav-item-gradient: linear-gradient(35deg, #3f0404 0%, #651a01 100%);
+
+@mixin nav-transform($translate, $scale: 1) {
+  transform: translateX($translate) rotateZ($nav-item-rotation) scale($scale);
+}
+
 .nav-menu {
   position: absolute;
   top: 0vh;
@@ -21,36 +33,50 @@
     text-align: center;
 
     color: white;
-    background: linear-gradient(35deg, #3f0404 0%, #651a01 100%);
+    background: $nav-item-gradient;
 
     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-
     padding: 10px clamp(2rem, 4vw, 4rem);
 
     z-index: 4;
-
-    transform: translateX(-1vw) rotateZ(-4deg);
-    transition: all 1s;
-
     cursor: pointer;
+
+    @include nav-transform($nav-item-translate-default);
     transition:
       transform 0.2s ease,
-      filter 0.2s ease;
+      filter 0.2s ease,
+      letter-spacing 0.2s ease;
 
     &:hover {
       filter: brightness(1.2);
-      transform: scale(1.03) rotateZ(-4deg);
       letter-spacing: 0.6px;
+      @include nav-transform(0, $nav-item-scale-hover);
+    }
+
+    &.active {
+      filter: brightness(1.2);
+      @include nav-transform(0, $nav-item-scale-active);
     }
 
     &:nth-child(3),
     &:nth-child(4) {
-      transform: translateX(4vw) rotateZ(-4deg);
+      @include nav-transform($nav-item-translate-shifted);
 
       &:hover {
         filter: brightness(1.2);
-        transform: translateX(5vw) scale(1.03) rotateZ(-4deg);
         letter-spacing: 0.6px;
+        @include nav-transform(
+          $nav-item-translate-shifted-hover,
+          $nav-item-scale-hover
+        );
+      }
+
+      &.active {
+        filter: brightness(1.2);
+        @include nav-transform(
+          $nav-item-translate-shifted-hover,
+          $nav-item-scale-active
+        );
       }
     }
   }

@@ -14,7 +14,7 @@ function NavMenu({ selected, onSelect }: NavMenuProps) {
         {sections.map((section) => (
           <div
             key={section}
-            className="nav-item"
+            className={`nav-item ${section === selected ? "active" : ""}`}
             onClick={() => onSelect(section)}
           >
             {section}
