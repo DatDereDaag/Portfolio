@@ -1,13 +1,25 @@
 import "./index.scss";
 
-function NavMenu() {
+interface NavMenuProps {
+  selected: string;
+  onSelect: (section: string) => void;
+}
+
+function NavMenu({ selected, onSelect }: NavMenuProps) {
+  const sections = ["Projects", "Experience", "Certificates", "Contact"];
+
   return (
     <>
       <div className="nav-menu">
-        <div className="nav-item">Projects</div>
-        <div className="nav-item">Experience</div>
-        <div className="nav-item">Certificates</div>
-        <div className="nav-item">Contact</div>
+        {sections.map((section) => (
+          <div
+            key={section}
+            className="nav-item"
+            onClick={() => onSelect(section)}
+          >
+            {section}
+          </div>
+        ))}
       </div>
       <div className="nav-background one"></div>
       <div className="nav-background two"></div>

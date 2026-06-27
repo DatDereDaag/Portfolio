@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -12,6 +12,9 @@ declare global {
 }
 
 function Home() {
+  //Header State
+  const [selectedContent, setSelectedContent] = useState("Projects");
+
   // Initialize FinisherHeader after the component mounts
   useEffect(() => {
     if (window.FinisherHeader) {
@@ -68,9 +71,9 @@ function Home() {
         </div>
       </div>
 
-      <NavMenu />
+      <NavMenu selected={selectedContent} onSelect={setSelectedContent} />
 
-      <ContentSlider />
+      <ContentSlider selected={selectedContent} />
     </div>
   );
 }
