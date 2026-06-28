@@ -1,9 +1,9 @@
-$nav-item-translate-default: -1vw;
+$nav-item-translate-default: 2vw;
 $nav-item-translate-shifted: 4vw;
 $nav-item-translate-shifted-hover: 5vw;
 $nav-item-rotation: -4deg;
 $nav-item-scale-hover: 1.03;
-$nav-item-scale-active: 1.08;
+$nav-item-scale-active: 1.04;
 $nav-item-gradient: linear-gradient(35deg, #3f0404 0%, #651a01 100%);
 
 @mixin nav-transform($translate, $scale: 1) {
@@ -50,35 +50,41 @@ $nav-item-gradient: linear-gradient(35deg, #3f0404 0%, #651a01 100%);
     &:hover {
       filter: brightness(1.2);
       letter-spacing: 0.6px;
-      @include nav-transform(0, $nav-item-scale-hover);
+      @include nav-transform(
+        $nav-item-translate-default,
+        $nav-item-scale-hover
+      );
     }
 
     &.active {
       filter: brightness(1.2);
-      @include nav-transform(0, $nav-item-scale-active);
+      @include nav-transform(
+        $nav-item-translate-default,
+        $nav-item-scale-active
+      );
     }
 
-    &:nth-child(3),
-    &:nth-child(4) {
-      @include nav-transform($nav-item-translate-shifted);
+    // &:nth-child(3),
+    // &:nth-child(4) {
+    //   @include nav-transform($nav-item-translate-shifted);
 
-      &:hover {
-        filter: brightness(1.2);
-        letter-spacing: 0.6px;
-        @include nav-transform(
-          $nav-item-translate-shifted-hover,
-          $nav-item-scale-hover
-        );
-      }
+    //   &:hover {
+    //     filter: brightness(1.2);
+    //     letter-spacing: 0.6px;
+    //     @include nav-transform(
+    //       $nav-item-translate-shifted-hover,
+    //       $nav-item-scale-hover
+    //     );
+    //   }
 
-      &.active {
-        filter: brightness(1.2);
-        @include nav-transform(
-          $nav-item-translate-shifted-hover,
-          $nav-item-scale-active
-        );
-      }
-    }
+    //   &.active {
+    //     filter: brightness(1.2);
+    //     @include nav-transform(
+    //       $nav-item-translate-shifted-hover,
+    //       $nav-item-scale-active
+    //     );
+    //   }
+    // }
   }
 }
 
