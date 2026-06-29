@@ -57,6 +57,20 @@
       rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
     z-index: 7;
+
+    //Typography of elements below
+
+    font-family: $secondary-font;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    line-height: 1.85rem;
+
+    color: $text-colour;
+    padding: 10px 5px;
+
+    &-card-bullets {
+    }
   }
 
   &-image {

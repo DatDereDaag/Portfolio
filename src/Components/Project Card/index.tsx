@@ -19,7 +19,15 @@ function ProjectCard() {
         alt="project-image"
         className="card-image third"
       />
-      <div className="card-description"></div>
+      <div className="card-description">
+        <ul className="card-description-bullets">
+          <li>Functional customer storefront</li>
+          <li>Route & inventory management</li>
+          <li>Real-time order & driver tracking</li>
+          <li>Real-time owner dashboard</li>
+          <li>On-the-go transactions</li>
+        </ul>
+      </div>
     </div>
   );
 }
