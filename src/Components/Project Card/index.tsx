@@ -3,7 +3,7 @@ import "./index.scss";
 function ProjectCard() {
   return (
     <div className="card-background">
-      <div className="card-title">Bakery Management App</div>
+      <div className="card-title">Bakery Suite App</div>
       <img
         src="src\assets\images\projects\Customer_Home.png"
         alt="project-image"
@@ -15,7 +15,7 @@ function ProjectCard() {
         className="card-image second"
       />
       <img
-        src="src\assets\images\projects\Owner_Dashboard.png"
+        src="src\assets\images\projects\Customer_Schedule.png"
         alt="project-image"
         className="card-image third"
       />

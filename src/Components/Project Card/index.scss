@@ -3,7 +3,7 @@
 .card {
   &-background {
     position: relative;
-    width: 32vw;
+    width: 30vw;
     height: 42vh;
     background: rgba(0, 0, 0, 0.2);
 
@@ -14,6 +14,9 @@
 
   &-title {
     position: absolute;
+    top: 5vh;
+    left: 6vw;
+
     font-family: $secondary-font;
     font-size: 1.5rem;
     font-weight: 600;
@@ -30,17 +33,36 @@
     padding: 10px;
 
     box-shadow:
-      rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
-      rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
-      rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+      rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
     z-index: 8;
   }
 
+  &-description {
+    position: absolute;
+    top: 9vh;
+    left: 8vw;
+
+    width: 20vw;
+    height: 27vh;
+
+    background-color: $surface-colour;
+
+    box-shadow:
+      rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px,
+      rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px,
+      rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    z-index: 7;
+  }
+
   &-image {
     position: absolute;
-    width: 10vw;
-    height: 35vh;
+    width: 11vw;
+    height: 42vh;
 
     border-radius: 10px;
     object-fit: cover;
@@ -53,7 +75,7 @@
     &.first {
       z-index: 7;
 
-      top: 8vh;
+      top: 4vh;
 
       filter: brightness(0.8);
     }
@@ -61,10 +83,10 @@
     &.second {
       z-index: 6;
 
-      transform: rotatey(10deg);
+      transform: rotatey(20deg);
 
-      left: 4vw;
-      top: 6vh;
+      left: 5vw;
+      top: 2vh;
 
       filter: brightness(0.5);
     }
@@ -74,15 +96,9 @@
 
       transform: rotatey(20deg);
 
-      top: 4vh;
-      left: 7vw;
+      left: 9vw;
 
       filter: brightness(0.3);
     }
-  }
-
-  &-description {
-    position: absolute;
-    z-index: 7;
   }
 }

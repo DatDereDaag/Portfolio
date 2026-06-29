@@ -1,2 +1,15 @@
-$main-gradient: linear-gradient(35deg, #3f0404 0%, #651a01 100%);
-$card-header-gradient: linear-gradient(35deg, #651a01 0%, #3f0404 100%);
+$primary-colour-one: #3f0404;
+$primary-colour-two: #651a01;
+
+$surface-colour: #231f1f;
+
+$main-gradient: linear-gradient(
+  35deg,
+  $primary-colour-one 0%,
+  $primary-colour-two 100%
+);
+$card-header-gradient: linear-gradient(
+  35deg,
+  $primary-colour-two 0%,
+  $primary-colour-one 100%
+);
