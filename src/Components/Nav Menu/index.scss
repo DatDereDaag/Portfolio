@@ -26,7 +26,7 @@ $nav-item-scale-active: 1.04;
 
   .nav-item {
     font-size: 2rem;
-    font-family: "Raleway", sans-serif;
+    font-family: $main-font;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: italic;
@@ -34,7 +34,7 @@ $nav-item-scale-active: 1.04;
     text-align: center;
 
     color: white;
-    background: $nav-item-gradient;
+    background: $main-gradient;
 
     clip-path: $nav-item-shape;
     padding: 10px clamp(2rem, 4vw, 4rem);

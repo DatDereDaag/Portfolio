@@ -1,3 +1,5 @@
+@use "../../styles/abstract/" as *;
+
 .content-container {
   position: absolute;
   width: 100%;
@@ -7,13 +9,13 @@
 
   .slider-header {
     position: absolute;
-    font-family: "Raleway", sans-serif;
+    font-family: $main-font;
     font-optical-sizing: auto;
     font-weight: 600;
     font-size: 2.7rem;
     letter-spacing: 1px;
 
-    background: linear-gradient(35deg, #3f0404 0%, #651a01 100%);
+    background: $main-gradient;
     color: white;
 
     margin: 0px;
@@ -21,7 +23,7 @@
 
     width: 32vw;
 
-    clip-path: polygon(0 0, 100% 0, 100% 41%, 0 100%);
+    clip-path: $content-header-shape;
 
     box-shadow:
       rgba(14, 63, 126, 0.04) 0px 0px 0px 1px,

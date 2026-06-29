@@ -1,3 +1,5 @@
+@use "../../styles/abstract" as *;
+
 .card {
   &-background {
     width: 32vw;
@@ -10,10 +12,10 @@
   }
 
   &-title {
-    font-family: "Inter", sans-serif;
+    font-family: $secondary-font;
     font-size: 1rem;
 
-    clip-path: polygon(0 0, 91% 0, 100% 100%, 9% 100%);
+    clip-path: $card-title-shape;
 
     padding: 10px 20px 10px 30px;
 

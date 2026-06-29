@@ -1,3 +1,5 @@
+@use "../../styles/abstract/" as *;
+
 .hero-section {
   position: absolute;
   top: 2vh;
@@ -7,7 +9,7 @@
   color: white;
 
   .hero-font {
-    font-family: "Expletus Sans", sans-serif;
+    font-family: $hero-font;
     font-optical-sizing: auto;
     font-weight: 600;
     letter-spacing: -1.74px;
