@@ -4,9 +4,21 @@ function ProjectCard() {
   return (
     <div className="card-background">
       <div className="card-title">Bakery Management App</div>
-      <div className="card-image first"></div>
-      <div className="card-image second"></div>
-      <div className="card-image third"></div>
+      <img
+        src="src\assets\images\projects\Customer_Home.png"
+        alt="project-image"
+        className="card-image first"
+      />
+      <img
+        src="src\assets\images\projects\Customer_Store.png"
+        alt="project-image"
+        className="card-image second"
+      />
+      <img
+        src="src\assets\images\projects\Driver_Request_View.png"
+        alt="project-image"
+        className="card-image third"
+      />
       <div className="card-description"></div>
     </div>
   );

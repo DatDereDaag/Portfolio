@@ -2,6 +2,7 @@
 
 .card {
   &-background {
+    position: relative;
     width: 32vw;
     height: 42vh;
     background: rgba(0, 0, 0, 0.2);
@@ -12,6 +13,7 @@
   }
 
   &-title {
+    position: absolute;
     font-family: $secondary-font;
     font-size: 1.5rem;
     font-weight: 600;
@@ -27,24 +29,58 @@
 
     padding: 10px;
 
+    box-shadow:
+      rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+      rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+      rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+
     z-index: 8;
   }
 
   &-image {
+    position: absolute;
+    width: 10vw;
+    height: 35vh;
+
+    border-radius: 10px;
+    object-fit: cover;
+
+    box-shadow:
+      rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+      rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+      rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+
     &.first {
       z-index: 7;
+
+      top: 8vh;
+
+      filter: brightness(0.8);
     }
 
     &.second {
       z-index: 6;
+
+      transform: rotatey(10deg) rotateZ(0deg);
+
+      left: 4vw;
+      top: 6vh;
+
+      filter: brightness(0.5);
     }
 
     &.third {
       z-index: 5;
+
+      top: 4vh;
+      left: 6vw;
+
+      filter: brightness(0.3);
     }
   }
 
   &-description {
+    position: absolute;
     z-index: 7;
   }
 }

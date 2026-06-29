@@ -49,7 +49,7 @@ function Home() {
       ></div>
 
       <div className="hero-section">
-        <h1 className="hero-font">Hi, I'm Mikisumresh,</h1>
+        <h1 className="hero-font">Hi, I'm .,</h1>
         <h1 className="hero-font bottom-hero-font">Full-Stack Developer.</h1>
         <div className="hero-icons">
           <a
