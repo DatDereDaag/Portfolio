@@ -61,7 +61,7 @@
     &.second {
       z-index: 6;
 
-      transform: rotatey(10deg) rotateZ(0deg);
+      transform: rotatey(10deg);
 
       left: 4vw;
       top: 6vh;
@@ -72,8 +72,10 @@
     &.third {
       z-index: 5;
 
+      transform: rotatey(20deg);
+
       top: 4vh;
-      left: 6vw;
+      left: 7vw;
 
       filter: brightness(0.3);
     }

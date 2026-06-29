@@ -15,7 +15,7 @@ function ProjectCard() {
         className="card-image second"
       />
       <img
-        src="src\assets\images\projects\Driver_Request_View.png"
+        src="src\assets\images\projects\Owner_Dashboard.png"
         alt="project-image"
         className="card-image third"
       />
