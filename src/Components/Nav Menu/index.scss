@@ -112,7 +112,7 @@ $nav-item-scale-active: 1.04;
   }
 
   &.two {
-    clip-path: $nav-item-shape-two;
+    clip-path: $nav-background-shape-two;
     right: 1vw;
     top: 2vh;
 
@@ -131,7 +131,7 @@ $nav-item-scale-active: 1.04;
   }
 
   &.three {
-    clip-path: $nav-item-shape-two;
+    clip-path: $nav-background-shape-two;
     right: 2vw;
     top: 10vh;
 
