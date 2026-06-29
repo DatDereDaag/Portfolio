@@ -1,10 +1,11 @@
+@use "../../styles/abstract" as *;
+
 $nav-item-translate-default: 2vw;
 $nav-item-translate-shifted: 4vw;
 $nav-item-translate-shifted-hover: 5vw;
 $nav-item-rotation: -4deg;
 $nav-item-scale-hover: 1.03;
 $nav-item-scale-active: 1.04;
-$nav-item-gradient: linear-gradient(35deg, #3f0404 0%, #651a01 100%);
 
 @mixin nav-transform($translate, $scale: 1) {
   transform: translateX($translate) rotateZ($nav-item-rotation) scale($scale);
@@ -35,7 +36,7 @@ $nav-item-gradient: linear-gradient(35deg, #3f0404 0%, #651a01 100%);
     color: white;
     background: $nav-item-gradient;
 
-    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    clip-path: $nav-item-shape;
     padding: 10px clamp(2rem, 4vw, 4rem);
 
     z-index: 4;
@@ -92,7 +93,7 @@ $nav-item-gradient: linear-gradient(35deg, #3f0404 0%, #651a01 100%);
   position: absolute;
 
   &.one {
-    clip-path: polygon(75% 0%, 0% 0%, 25% 100%, 100% 100%);
+    clip-path: $nav-background-shape-one;
     right: 4vw;
     top: 2vh;
 
@@ -111,7 +112,7 @@ $nav-item-gradient: linear-gradient(35deg, #3f0404 0%, #651a01 100%);
   }
 
   &.two {
-    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    clip-path: $nav-item-shape-two;
     right: 1vw;
     top: 2vh;
 
@@ -130,7 +131,7 @@ $nav-item-gradient: linear-gradient(35deg, #3f0404 0%, #651a01 100%);
   }
 
   &.three {
-    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    clip-path: $nav-item-shape-two;
     right: 2vw;
     top: 10vh;
 

@@ -1,3 +1,4 @@
+import ProjectCard from "../Project Card";
 import "./index.scss";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -24,9 +25,9 @@ function ContentSlider({ selected }: ContentSliderProps) {
       <div className="divider"></div>
       <div className="content-background">
         <div className="slider">
-          <div className="placeholder"></div>
-          <div className="placeholder"></div>
-          <div className="placeholder"></div>
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
         </div>
       </div>
     </div>
