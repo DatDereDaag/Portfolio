@@ -13,11 +13,19 @@
 
   &-title {
     font-family: $secondary-font;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    text-align: center;
+
+    color: white;
+    background: $card-header-gradient;
+
+    width: 22vw;
 
     clip-path: $card-title-shape;
 
-    padding: 10px 20px 10px 30px;
+    padding: 10px;
 
     z-index: 8;
   }
