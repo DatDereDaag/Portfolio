@@ -23,7 +23,7 @@ function ProjectCard() {
         className="card-overlay"
         width="459"
         height="337"
-        viewBox="0 0 459 337"
+        viewBox="0 0 459 317"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -34,10 +34,6 @@ function ProjectCard() {
         <path
           d="M375.65 10.4683L387.575 1.75356L383.572 17.121L372.771 25.2971L375.65 10.4683Z"
           fill="url(#paint1_linear_1_6)"
-        />
-        <path
-          d="M269.984 323.2L286.768 324.327L272.025 334.803L256.617 334.029L269.984 323.2Z"
-          fill="url(#paint2_linear_1_6)"
         />
         <path
           d="M404.084 302.367L406.266 319.734L392.637 306.755L390.368 290.862L404.084 302.367Z"
@@ -69,17 +65,6 @@ function ProjectCard() {
             y1="9.79017"
             x2="383.728"
             y2="16.9587"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#3F0404" />
-            <stop offset="1" stop-color="#651A01" />
-          </linearGradient>
-          <linearGradient
-            id="paint2_linear_1_6"
-            x1="271.052"
-            y1="323.088"
-            x2="272.281"
-            y2="334.776"
             gradientUnits="userSpaceOnUse"
           >
             <stop stop-color="#3F0404" />
