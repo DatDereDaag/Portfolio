@@ -1,4 +1,4 @@
-@use "../../styles/abstract" as *;
+@use "../../styles/index" as *;
 
 .card {
   &-background {
@@ -19,7 +19,7 @@
     font-family: $secondary-font;
     font-size: 1.5rem;
     font-weight: 600;
-    letter-spacing: 0.2px;
+    letter-spacing: -0.2px;
     text-align: center;
 
     color: white;
@@ -40,12 +40,12 @@
 
   &-description {
     position: absolute;
-    top: 9vh;
-    left: 8vw;
+    top: 21%;
+    left: 26%;
+    width: 67%;
+    height: 64%;
 
-    width: 20vw;
-    height: 27vh;
-
+    padding: 10px 5px;
     background-color: $surface-colour;
 
     box-shadow:
@@ -58,17 +58,22 @@
     z-index: 7;
 
     //Typography of elements below
+    &-bullets {
+      font-family: $secondary-font;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.35px;
+      line-height: 1.85rem;
 
-    font-family: $secondary-font;
-    font-size: 1.05rem;
-    font-weight: 600;
-    letter-spacing: 0.2px;
-    line-height: 1.85rem;
+      color: $text-colour;
+    }
 
-    color: $text-colour;
-    padding: 10px 5px;
-
-    &-card-bullets {
+    &-tags {
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      gap: 0.5rem;
+      padding: 0.4rem 0.6rem;
     }
   }
 

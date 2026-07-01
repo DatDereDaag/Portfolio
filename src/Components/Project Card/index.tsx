@@ -1,4 +1,5 @@
 import "./index.scss";
+import { SiFlask, SiJavascript } from "react-icons/si";
 
 function ProjectCard() {
   return (
@@ -19,7 +20,7 @@ function ProjectCard() {
         alt="project-image"
         className="card-image third"
       />
-      <svg
+      {/* <svg
         className="card-overlay"
         width="459"
         height="337"
@@ -104,7 +105,7 @@ function ProjectCard() {
             <stop offset="1" stop-color="#651A01" />
           </linearGradient>
         </defs>
-      </svg>
+      </svg> */}
 
       <div className="card-description">
         <ul className="card-description-bullets">
@@ -114,6 +115,14 @@ function ProjectCard() {
           <li>Real-time owner dashboard</li>
           <li>On-the-go transactions</li>
         </ul>
+        <div className="card-description-tags">
+          <span className="tag flask">
+            <SiFlask />
+          </span>
+          <span className="tag javascript">
+            <SiJavascript />
+          </span>
+        </div>
       </div>
     </div>
   );

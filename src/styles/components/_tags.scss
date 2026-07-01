@@ -1,0 +1,38 @@
+.tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.4rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+
+  &:hover {
+    transform: scale(1.15);
+    filter: brightness(1.2);
+  }
+
+  &.flask {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  &.javascript {
+    color: #f7df1e;
+    background-color: rgba(247, 223, 30, 0.1);
+  }
+
+  &.typescript {
+    color: #3178c6;
+    background-color: rgba(49, 120, 198, 0.1);
+  }
+
+  &.react {
+    color: #61dafb;
+    background-color: rgba(97, 218, 251, 0.1);
+  }
+}
