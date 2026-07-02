@@ -1,0 +1,20 @@
+[
+  {
+    "id": "bakery-suite",
+    "title": "Bakery Suite App",
+    "cardType": "mobile",
+    "bullets": [
+      "Functional customer storefront",
+      "Route & inventory management",
+      "Real-time order & driver tracking",
+      "Real-time owner dashboard",
+      "On-the-go transactions"
+    ],
+    "tags": ["flask", "javascript"],
+    "images": [
+      "src/assets/images/projects/Customer_Home.png",
+      "src/assets/images/projects/Customer_Store.png",
+      "src/assets/images/projects/Customer_Schedule.png"
+    ]
+  }
+]
