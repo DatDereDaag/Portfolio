@@ -2,7 +2,7 @@ import "./index.scss";
 import { SiFlask, SiJavascript } from "react-icons/si";
 import { FiCheckCircle } from "react-icons/fi";
 
-function ProjectCard() {
+function ProjectCardMobile() {
   return (
     <div className="card-background">
       <div className="card-title">Bakery Suite App</div>
@@ -144,4 +144,4 @@ function ProjectCard() {
   );
 }
 
-export default ProjectCard;
+export default ProjectCardMobile;
