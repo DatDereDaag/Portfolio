@@ -9,6 +9,10 @@
     flex-shrink: 0;
 
     z-index: 4;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &-title {
@@ -16,10 +20,11 @@
     top: 5vh;
     left: 6vw;
 
-    font-family: $secondary-font;
+    font-family: $main-font;
     font-size: 1.5rem;
     font-weight: 600;
-    letter-spacing: -0.2px;
+    font-style: bold;
+    letter-spacing: 0.1px;
     text-align: center;
 
     color: white;
@@ -45,6 +50,10 @@
     width: 67%;
     height: 64%;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     padding: 10px 5px;
     background-color: $surface-colour;
 
@@ -59,13 +68,30 @@
 
     //Typography of elements below
     &-bullets {
-      font-family: $secondary-font;
-      font-size: 1.05rem;
-      font-weight: 600;
+      font-family: $main-font;
+      font-size: 1.09rem;
+      font-weight: 500;
       letter-spacing: 0.35px;
-      line-height: 1.85rem;
 
       color: $text-colour;
+
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 20px 5px 0px 15px;
+
+      .bullet-item {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+
+        position: relative;
+
+        .bullet-icon {
+          font-size: 0.9rem;
+          flex-shrink: 0;
+        }
+      }
     }
 
     &-tags {
@@ -74,6 +100,17 @@
       justify-content: end;
       gap: 0.5rem;
       padding: 0.4rem 0.6rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 23%;
+        right: 5%;
+
+        width: 15%;
+        height: 6px;
+        background-color: $primary-colour-two;
+      }
     }
   }
 

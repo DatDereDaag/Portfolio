@@ -1,5 +1,6 @@
 import "./index.scss";
 import { SiFlask, SiJavascript } from "react-icons/si";
+import { FiCheckCircle } from "react-icons/fi";
 
 function ProjectCard() {
   return (
@@ -108,13 +109,28 @@ function ProjectCard() {
       </svg> */}
 
       <div className="card-description">
-        <ul className="card-description-bullets">
-          <li>Functional customer storefront</li>
-          <li>Route & inventory management</li>
-          <li>Real-time order & driver tracking</li>
-          <li>Real-time owner dashboard</li>
-          <li>On-the-go transactions</li>
-        </ul>
+        <div className="card-description-bullets">
+          <div className="bullet-item">
+            <FiCheckCircle className="bullet-icon" />
+            <span>Functional customer storefront</span>
+          </div>
+          <div className="bullet-item">
+            <FiCheckCircle className="bullet-icon" />
+            <span>Route & inventory management</span>
+          </div>
+          <div className="bullet-item">
+            <FiCheckCircle className="bullet-icon" />
+            <span>Real-time order & driver tracking</span>
+          </div>
+          <div className="bullet-item">
+            <FiCheckCircle className="bullet-icon" />
+            <span>Real-time owner dashboard</span>
+          </div>
+          <div className="bullet-item">
+            <FiCheckCircle className="bullet-icon" />
+            <span>On-the-go transactions</span>
+          </div>
+        </div>
         <div className="card-description-tags">
           <span className="tag flask">
             <SiFlask />
