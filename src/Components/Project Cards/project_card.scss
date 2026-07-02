@@ -1,0 +1,125 @@
+@use "../../styles/index" as *;
+
+.card {
+  &-background {
+    position: relative;
+    width: 30vw;
+    height: 42vh;
+
+    flex-shrink: 0;
+
+    z-index: 4;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &-title {
+    position: absolute;
+    top: 5vh;
+    left: 6vw;
+
+    font-family: $main-font;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-style: bold;
+    letter-spacing: 0.1px;
+    text-align: center;
+
+    color: white;
+    background: $card-header-gradient;
+
+    width: 22vw;
+
+    clip-path: $card-title-shape;
+
+    padding: 10px;
+
+    box-shadow:
+      rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+    z-index: 8;
+  }
+
+  &-description {
+    position: absolute;
+    top: 21%;
+    left: 26%;
+    width: 67%;
+    height: 64%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 10px 5px;
+    background-color: $surface-colour;
+
+    box-shadow:
+      rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px,
+      rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px,
+      rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    z-index: 7;
+
+    //Typography of elements below
+    &-bullets {
+      font-family: $main-font;
+      font-size: 1.09rem;
+      font-weight: 500;
+      letter-spacing: 0.35px;
+
+      color: $text-colour;
+
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 20px 5px 0px 15px;
+
+      .bullet-item {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+
+        position: relative;
+
+        .bullet-icon {
+          font-size: 0.9rem;
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    &-tags {
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      gap: 0.5rem;
+      padding: 0.4rem 0.6rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 23%;
+        right: 5%;
+
+        width: 15%;
+        height: 6px;
+        background-color: $primary-colour-two;
+      }
+    }
+  }
+
+  &-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 6;
+    pointer-events: none;
+  }
+}

@@ -1,3 +1,4 @@
+import "../project_card.scss";
 import "./index.scss";
 import { SiFlask, SiJavascript } from "react-icons/si";
 import { FiCheckCircle } from "react-icons/fi";

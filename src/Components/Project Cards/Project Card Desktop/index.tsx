@@ -1,3 +1,4 @@
+import "../project_card.scss";
 import "./index.scss";
 import { SiFlask, SiJavascript } from "react-icons/si";
 import { FiCheckCircle } from "react-icons/fi";
@@ -5,7 +6,7 @@ import { FiCheckCircle } from "react-icons/fi";
 function ProjectCardDesktop() {
   return (
     <div className="card-background">
-      <div className="card-title">Bakery Suite App</div>
+      {/* <div className="card-title">Bakery Suite App</div> */}
       <img
         src="src\assets\images\projects\Customer_Home.png"
         alt="project-image"
@@ -22,7 +23,7 @@ function ProjectCardDesktop() {
         className="card-image third"
       />
 
-      <div className="card-description">
+      {/* <div className="card-description">
         <div className="card-description-bullets">
           <div className="bullet-item">
             <FiCheckCircle className="bullet-icon" />
@@ -53,7 +54,7 @@ function ProjectCardDesktop() {
             <SiJavascript />
           </span>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
