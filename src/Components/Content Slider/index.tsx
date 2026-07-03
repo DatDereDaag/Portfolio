@@ -1,5 +1,4 @@
-import ProjectCardDesktop from "../Project Cards/Project Card Desktop";
-import ProjectCardMobile from "../Project Cards/Project Card Mobile";
+import ProjectCard from "../Project Card";
 import "./index.scss";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -29,13 +28,9 @@ function ContentSlider({ selected }: ContentSliderProps) {
       <div className="divider"></div>
       <div className="content-background">
         <div className="slider">
-          {(projects as Project[]).map((project) =>
-            project.cardType === "mobile" ? (
-              <ProjectCardMobile />
-            ) : (
-              <ProjectCardDesktop />
-            ),
-          )}
+          {(projects as Project[]).map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
         </div>
       </div>
     </div>

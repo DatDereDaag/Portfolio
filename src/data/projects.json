@@ -11,7 +11,7 @@
       "On-the-go transactions"
     ],
     "tags": ["flask", "javascript"],
-    "images": [
+    "cardImages": [
       "src/assets/images/projects/Customer_Home.png",
       "src/assets/images/projects/Customer_Store.png",
       "src/assets/images/projects/Customer_Schedule.png"
@@ -29,7 +29,7 @@
       "On-the-go transactions"
     ],
     "tags": ["flask", "javascript"],
-    "images": [
+    "cardImages": [
       "src/assets/images/projects/Customer_Home.png",
       "src/assets/images/projects/Customer_Store.png",
       "src/assets/images/projects/Customer_Schedule.png"
@@ -47,7 +47,7 @@
       "On-the-go transactions"
     ],
     "tags": ["flask", "javascript"],
-    "images": [
+    "cardImages": [
       "src/assets/images/projects/Customer_Home.png",
       "src/assets/images/projects/Customer_Store.png",
       "src/assets/images/projects/Customer_Schedule.png"

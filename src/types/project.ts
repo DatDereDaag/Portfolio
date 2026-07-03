@@ -6,5 +6,5 @@ export interface Project {
   cardType: CardType;
   bullets: string[];
   tags: string[];
-  images: string[];
+  cardImages: string[];
 }

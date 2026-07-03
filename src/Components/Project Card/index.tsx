@@ -1,27 +1,42 @@
-import "../project_card.scss";
+import "./project_card.scss";
 import "./index.scss";
-import { SiFlask, SiJavascript } from "react-icons/si";
-import { FiCheckCircle } from "react-icons/fi";
+import { Project } from "../../types/project";
 
-function ProjectCardMobile() {
+import {
+  SiFlask,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiPython,
+} from "react-icons/si";
+import { FiCheckCircle } from "react-icons/fi";
+import { ReactNode } from "react";
+
+const tagIconMap: Record<string, ReactNode> = {
+  flask: <SiFlask />,
+  javascript: <SiJavascript />,
+  typescript: <SiTypescript />,
+  react: <SiReact />,
+  python: <SiPython />,
+};
+
+interface ProjectCardProps {
+  project: Project;
+}
+
+function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="card-background">
-      <div className="card-title">Bakery Suite App</div>
-      <img
-        src="src\assets\images\projects\Customer_Home.png"
-        alt="project-image"
-        className="card-image first"
-      />
-      <img
-        src="src\assets\images\projects\Customer_Store.png"
-        alt="project-image"
-        className="card-image second"
-      />
-      <img
-        src="src\assets\images\projects\Customer_Schedule.png"
-        alt="project-image"
-        className="card-image third"
-      />
+      <div className="card-title">{project.title}</div>
+      <div className="card-images">
+        {(project.cardImages as string[]).map((image) => (
+          <img
+            src={image}
+            alt={`card-image-${project.cardType} `}
+            className={`card-image-${project.cardType} `}
+          />
+        ))}
+      </div>
       {/* <svg
         className="card-overlay"
         width="459"
@@ -111,38 +126,21 @@ function ProjectCardMobile() {
 
       <div className="card-description">
         <div className="card-description-bullets">
-          <div className="bullet-item">
-            <FiCheckCircle className="bullet-icon" />
-            <span>Functional customer storefront</span>
-          </div>
-          <div className="bullet-item">
-            <FiCheckCircle className="bullet-icon" />
-            <span>Route & inventory management</span>
-          </div>
-          <div className="bullet-item">
-            <FiCheckCircle className="bullet-icon" />
-            <span>Real-time order & driver tracking</span>
-          </div>
-          <div className="bullet-item">
-            <FiCheckCircle className="bullet-icon" />
-            <span>Real-time owner dashboard</span>
-          </div>
-          <div className="bullet-item">
-            <FiCheckCircle className="bullet-icon" />
-            <span>On-the-go transactions</span>
-          </div>
+          {(project.bullets as string[]).map((bullet) => (
+            <div className="bullet-item">
+              <FiCheckCircle className="bullet-icon" />
+              <span>{bullet}</span>
+            </div>
+          ))}
         </div>
         <div className="card-description-tags">
-          <span className="tag flask">
-            <SiFlask />
-          </span>
-          <span className="tag javascript">
-            <SiJavascript />
-          </span>
+          {(project.tags as string[]).map((tagName) => (
+            <span className={`tag ${tagName}`}>{tagIconMap[tagName]}</span>
+          ))}
         </div>
       </div>
     </div>
   );
 }
 
-export default ProjectCardMobile;
+export default ProjectCard;
