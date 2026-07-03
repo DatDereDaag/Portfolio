@@ -83,7 +83,7 @@
       &:nth-child(2) {
         z-index: 6;
 
-        transform: rotatey(20deg);
+        transform: rotatey(10deg);
 
         top: 7vh;
         left: 1vw;
@@ -193,7 +193,7 @@
       &::before {
         content: "";
         position: absolute;
-        bottom: 23%;
+        bottom: 24%;
         right: 5%;
 
         width: 15%;
