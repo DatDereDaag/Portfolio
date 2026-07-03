@@ -1,4 +1,3 @@
-import "./project_card.scss";
 import "./index.scss";
 import { Project } from "../../types/project";
 
