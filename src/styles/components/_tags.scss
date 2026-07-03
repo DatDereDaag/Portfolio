@@ -8,6 +8,7 @@
   font-size: 1.2rem;
 
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  background-color: rgba(65, 65, 65, 0.318);
 
   transition:
     transform 0.2s ease,
@@ -18,23 +19,9 @@
     filter: brightness(1.2);
   }
 
-  &.flask {
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.177);
-  }
-
-  &.javascript {
-    color: #f7df1e;
-    background-color: rgba(169, 166, 6, 0.299);
-  }
-
-  &.typescript {
-    color: #3178c6;
-    background-color: rgba(49, 120, 198, 0.1);
-  }
-
-  &.react {
-    color: #61dafb;
-    background-color: rgba(97, 218, 251, 0.1);
+  .tag-icon {
+    width: 1.4rem;
+    height: 1.4rem;
+    display: block;
   }
 }

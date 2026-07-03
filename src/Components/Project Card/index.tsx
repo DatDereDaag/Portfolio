@@ -1,23 +1,6 @@
 import "./index.scss";
 import { Project } from "../../types/project";
-
-import {
-  SiFlask,
-  SiJavascript,
-  SiTypescript,
-  SiReact,
-  SiPython,
-} from "react-icons/si";
 import { FiCheckCircle } from "react-icons/fi";
-import { ReactNode } from "react";
-
-const tagIconMap: Record<string, ReactNode> = {
-  flask: <SiFlask />,
-  javascript: <SiJavascript />,
-  typescript: <SiTypescript />,
-  react: <SiReact />,
-  python: <SiPython />,
-};
 
 interface ProjectCardProps {
   project: Project;
@@ -134,7 +117,13 @@ function ProjectCard({ project }: ProjectCardProps) {
         </div>
         <div className="card-description-tags">
           {(project.tags as string[]).map((tagName) => (
-            <span className={`tag ${tagName}`}>{tagIconMap[tagName]}</span>
+            <span className="tag">
+              <img
+                src={`https://skillicons.dev/icons?i=${tagName}`}
+                alt={tagName}
+                className="tag-icon"
+              />
+            </span>
           ))}
         </div>
       </div>

@@ -10,7 +10,7 @@
       "Real-time owner dashboard",
       "On-the-go transactions"
     ],
-    "tags": ["flask", "javascript"],
+    "tags": ["flask", "javascript", "html", "css"],
     "cardImages": [
       "src/assets/images/projects/BakerySuiteApp/Customer_Home.png",
       "src/assets/images/projects/BakerySuiteApp/Customer_Store.png",
@@ -28,7 +28,7 @@
       "Real-time owner dashboard",
       "On-the-go transactions"
     ],
-    "tags": ["flask", "javascript"],
+    "tags": ["python", "docker", "fastapi"],
     "cardImages": [
       "src/assets/images/projects/DataLakehouse/MinIO.png",
       "src/assets/images/projects/DataLakehouse/Airflow.png",
@@ -46,7 +46,7 @@
       "Real-time owner dashboard",
       "On-the-go transactions"
     ],
-    "tags": ["flask", "javascript"],
+    "tags": ["flask", "javascript", "html", "css"],
     "cardImages": [
       "src/assets/images/projects/StudentIncentive/student_home.png",
       "src/assets/images/projects/StudentIncentive/staff_requests.png",
