@@ -2,6 +2,8 @@ import ProjectCard from "../Project Card";
 import "./index.scss";
 import { AnimatePresence, motion } from "framer-motion";
 
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+
 import projects from "../../data/projects.json";
 import { Project } from "../../types/project";
 
@@ -27,6 +29,12 @@ function ContentSlider({ selected }: ContentSliderProps) {
       </h1>
       <div className="divider"></div>
       <div className="content-background">
+        <button className="slider-arrow left">
+          <FiChevronLeft />
+        </button>
+        <button className="slider-arrow right">
+          <FiChevronRight />
+        </button>
         <div className="slider">
           {(projects as Project[]).map((project) => (
             <ProjectCard key={project.id} project={project} />
