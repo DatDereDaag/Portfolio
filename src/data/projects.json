@@ -12,9 +12,9 @@
     ],
     "tags": ["flask", "javascript"],
     "cardImages": [
-      "src/assets/images/projects/Customer_Home.png",
-      "src/assets/images/projects/Customer_Store.png",
-      "src/assets/images/projects/Customer_Schedule.png"
+      "src/assets/images/projects/BakerySuiteApp/Customer_Home.png",
+      "src/assets/images/projects/BakerySuiteApp/Customer_Store.png",
+      "src/assets/images/projects/BakerySuiteApp/Customer_Schedule.png"
     ]
   },
   {
@@ -30,9 +30,9 @@
     ],
     "tags": ["flask", "javascript"],
     "cardImages": [
-      "src/assets/images/projects/Customer_Home.png",
-      "src/assets/images/projects/Customer_Store.png",
-      "src/assets/images/projects/Customer_Schedule.png"
+      "src/assets/images/projects/DataLakehouse/MinIO.png",
+      "src/assets/images/projects/DataLakehouse/Airflow.png",
+      "src/assets/images/projects/DataLakehouse/DBT API.png"
     ]
   },
   {
@@ -48,9 +48,9 @@
     ],
     "tags": ["flask", "javascript"],
     "cardImages": [
-      "src/assets/images/projects/Customer_Home.png",
-      "src/assets/images/projects/Customer_Store.png",
-      "src/assets/images/projects/Customer_Schedule.png"
+      "src/assets/images/projects/StudentIncentive/student_home.png",
+      "src/assets/images/projects/StudentIncentive/staff_requests.png",
+      "src/assets/images/projects/StudentIncentive/student_leaderboards.png"
     ]
   }
 ]
