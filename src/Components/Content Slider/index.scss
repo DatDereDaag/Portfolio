@@ -104,7 +104,6 @@
       flex-wrap: nowrap;
 
       align-items: center;
-      justify-content: space-evenly;
 
       top: 2vh;
       left: 50.5%;
@@ -113,12 +112,15 @@
       height: 50vh;
       width: 96%;
 
-      gap: 1vw;
+      gap: 2.5vw;
+      padding: 0px 0px;
 
       z-index: 4;
 
       overflow-x: scroll;
       overflow-y: hidden;
+
+      scroll-snap-type: x mandatory;
 
       scrollbar-width: none;
       &::-webkit-scrollbar {
