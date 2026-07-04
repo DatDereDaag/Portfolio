@@ -54,21 +54,21 @@
     ]
   },
   {
-    "id": "student-incentive",
-    "title": "Student Incentive App",
+    "id": "fit-io",
+    "title": "Fit.io Web App",
     "cardType": "desktop",
     "bullets": [
-      "Student incentive leaderboards",
-      "Tracking of student activities",
-      "Traceable activity history",
-      "Staff management of activities",
-      "Tracking of longterm milestones"
+      "Weekly workout routine creation",
+      "Fully customizable workouts",
+      "Daily workout tracking",
+      "Browsable catalogue of exercises",
+      "BMI/BMR monitoring"
     ],
-    "tags": ["flask", "javascript", "html", "css"],
+    "tags": ["firebase", "javascript", "html", "css"],
     "cardImages": [
-      "src/assets/images/projects/StudentIncentive/student_home.png",
-      "src/assets/images/projects/StudentIncentive/staff_requests.png",
-      "src/assets/images/projects/StudentIncentive/student_leaderboards.png"
+      "src/assets/images/projects/Fit.io/Homepage.png",
+      "src/assets/images/projects/Fit.io/BMI.png",
+      "src/assets/images/projects/Fit.io/Routine.png"
     ]
   }
 ]
