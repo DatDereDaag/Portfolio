@@ -74,18 +74,25 @@
 
       z-index: 5;
 
-      &:hover {
-        cursor: pointer;
-        transform: scale(1.2);
-        filter: brightness(1.2);
+      &.disabled {
+        color: rgba(255, 255, 255, 0.1);
+        filter: none;
+        box-shadow: none;
+      }
 
-        background: #fa0a0a;
-        background: radial-gradient(
-          circle,
-          rgba(147, 145, 145, 0.188) 1%,
-          rgba(18, 15, 15, 0) 51%,
-          rgba(28, 26, 26, 0) 100%
-        );
+      &.enabled {
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.2);
+          filter: brightness(1.2);
+
+          background: radial-gradient(
+            circle,
+            rgba(147, 145, 145, 0.188) 1%,
+            rgba(18, 15, 15, 0) 51%,
+            rgba(28, 26, 26, 0) 100%
+          );
+        }
       }
 
       &.left {

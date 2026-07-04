@@ -52,5 +52,23 @@
       "src/assets/images/projects/StudentIncentive/staff_requests.png",
       "src/assets/images/projects/StudentIncentive/student_leaderboards.png"
     ]
+  },
+  {
+    "id": "student-incentive",
+    "title": "Student Incentive App",
+    "cardType": "desktop",
+    "bullets": [
+      "Student incentive leaderboards",
+      "Tracking of student activities",
+      "Traceable activity history",
+      "Staff management of activities",
+      "Tracking of longterm milestones"
+    ],
+    "tags": ["flask", "javascript", "html", "css"],
+    "cardImages": [
+      "src/assets/images/projects/StudentIncentive/student_home.png",
+      "src/assets/images/projects/StudentIncentive/staff_requests.png",
+      "src/assets/images/projects/StudentIncentive/student_leaderboards.png"
+    ]
   }
 ]

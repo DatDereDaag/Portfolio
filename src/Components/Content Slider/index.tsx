@@ -2,7 +2,7 @@ import ProjectCard from "../Project Card";
 import "./index.scss";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 import projects from "../../data/projects.json";
@@ -14,6 +14,18 @@ interface ContentSliderProps {
 
 function ContentSlider({ selected }: ContentSliderProps) {
   const sliderRef = useRef<HTMLDivElement>(null);
+
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+
+  function checkScroll() {
+    if (!sliderRef.current) return;
+
+    const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
+
+    setAtStart(scrollLeft <= 0);
+    setAtEnd(scrollLeft + clientWidth >= scrollWidth - 1);
+  }
 
   function scroll(direction: "left" | "right") {
     if (!sliderRef.current) return;
@@ -44,13 +56,19 @@ function ContentSlider({ selected }: ContentSliderProps) {
       </h1>
       <div className="divider"></div>
       <div className="content-background">
-        <button className="slider-arrow left" onClick={() => scroll("left")}>
+        <button
+          className={`slider-arrow left ${atStart ? "disabled" : "enabled"}`}
+          onClick={() => scroll("left")}
+        >
           <FiChevronLeft />
         </button>
-        <button className="slider-arrow right" onClick={() => scroll("right")}>
+        <button
+          className={`slider-arrow right ${atEnd ? "disabled" : "enabled"}`}
+          onClick={() => scroll("right")}
+        >
           <FiChevronRight />
         </button>
-        <div className="slider" ref={sliderRef}>
+        <div className="slider" ref={sliderRef} onScroll={checkScroll}>
           {(projects as Project[]).map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
