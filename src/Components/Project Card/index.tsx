@@ -10,20 +10,45 @@ interface ProjectCardProps {
 
 function ProjectCard({ project }: ProjectCardProps) {
   const shardAnimation = useAnimation();
+  const imageAnimation = useAnimation();
 
   function handleHoverStart() {
-    shardAnimation.start(() => ({
-      scale: [0, 1],
+    shardAnimation.start({
+      scale: [null, 1.08],
       transition: {
-        duration: 0.4,
+        duration: 0.2,
+        ease: "easeInOut",
+      },
+    });
+
+    imageAnimation.start((index) => ({
+      y: [null, -20 * index * 1],
+      x: [null, 30 * index * 1],
+      rotateZ: [null, 2 + index * 5],
+      rotateX: [null, -10 - index * 10],
+      rotateY: [null, -2 - index * 2],
+      transition: {
+        duration: 0.3,
         ease: "easeInOut",
       },
     }));
   }
 
   function handleHoverEnd() {
-    shardAnimation.start(() => ({
-      scale: [1, 0],
+    shardAnimation.start({
+      scale: [null, 0],
+      transition: {
+        duration: 0.25,
+        ease: "easeInOut",
+      },
+    });
+
+    imageAnimation.start((index) => ({
+      y: [null, 0],
+      x: [null, 0],
+      rotateZ: [null, 0],
+      rotateY: [null, 0],
+      rotateX: [null, 0],
       transition: {
         duration: 0.25,
         ease: "easeInOut",
@@ -39,16 +64,17 @@ function ProjectCard({ project }: ProjectCardProps) {
     >
       <div className="card-title">{project.title}</div>
       <div className="card-images">
-        {(project.cardImages as string[]).map((image) => (
-          <img
+        {(project.cardImages as string[]).map((image, index) => (
+          <motion.img
             src={image}
+            custom={index}
+            animate={imageAnimation}
             alt={`card-image-${project.cardType} `}
             className={`card-image-${project.cardType} `}
           />
         ))}
       </div>
       <motion.svg
-        key={"shards"}
         animate={shardAnimation}
         className="card-overlay"
         width="459"

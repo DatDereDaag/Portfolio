@@ -3,6 +3,7 @@
 .card {
   &-background {
     position: relative;
+    top: 5vh;
     width: 30vw;
     height: 42vh;
 
@@ -14,7 +15,8 @@
 
     &:hover {
       cursor: pointer;
-      transform: scale(1.08) translateY(-2vh);
+      transform: scale(1.08) translateY(-2vh) translateX(1vw);
+      filter: brightness(1.2);
     }
   }
 
@@ -214,7 +216,7 @@
 
     transform: scale(0);
 
-    z-index: 6;
+    z-index: 9;
     pointer-events: none;
   }
 }

@@ -24,7 +24,7 @@ function ContentSlider({ selected }: ContentSliderProps) {
     const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
 
     setAtStart(scrollLeft <= 0);
-    setAtEnd(scrollLeft + clientWidth >= scrollWidth - 1);
+    setAtEnd(scrollLeft + clientWidth >= scrollWidth - 10);
   }
 
   function scroll(direction: "left" | "right") {

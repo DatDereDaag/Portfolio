@@ -20,7 +20,7 @@ function Home() {
     if (window.FinisherHeader) {
       new window.FinisherHeader({
         count: 35,
-        size: { min: 500, max: 1500, pulse: 0.6 },
+        size: { min: 400, max: 1500, pulse: 0.6 },
         speed: { x: { min: 0.8, max: 1 }, y: { min: 0.1, max: 0.6 } },
         colors: {
           background: "#54062d",
