@@ -2,13 +2,41 @@ import "./index.scss";
 import { Project } from "../../types/project";
 import { FiCheckCircle } from "react-icons/fi";
 
+import { motion, useAnimation } from "framer-motion";
+
 interface ProjectCardProps {
   project: Project;
 }
 
 function ProjectCard({ project }: ProjectCardProps) {
+  const shardAnimation = useAnimation();
+
+  function handleHoverStart() {
+    shardAnimation.start(() => ({
+      scale: [0, 1],
+      transition: {
+        duration: 0.4,
+        ease: "easeInOut",
+      },
+    }));
+  }
+
+  function handleHoverEnd() {
+    shardAnimation.start(() => ({
+      scale: [1, 0],
+      transition: {
+        duration: 0.25,
+        ease: "easeInOut",
+      },
+    }));
+  }
+
   return (
-    <div className="card-background">
+    <motion.div
+      className="card-background"
+      onHoverStart={handleHoverStart}
+      onHoverEnd={handleHoverEnd}
+    >
       <div className="card-title">{project.title}</div>
       <div className="card-images">
         {(project.cardImages as string[]).map((image) => (
@@ -19,7 +47,9 @@ function ProjectCard({ project }: ProjectCardProps) {
           />
         ))}
       </div>
-      {/* <svg
+      <motion.svg
+        key={"shards"}
+        animate={shardAnimation}
         className="card-overlay"
         width="459"
         height="337"
@@ -104,7 +134,7 @@ function ProjectCard({ project }: ProjectCardProps) {
             <stop offset="1" stop-color="#651A01" />
           </linearGradient>
         </defs>
-      </svg> */}
+      </motion.svg>
 
       <div className="card-description">
         <div className="card-description-bullets">
@@ -127,7 +157,7 @@ function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

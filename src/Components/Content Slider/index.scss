@@ -112,17 +112,17 @@
 
       align-items: center;
 
-      top: 2vh;
+      top: -1vh;
       left: 50.5%;
       transform: translateX(-50%);
 
-      height: 50vh;
+      height: 55vh;
       width: 96%;
 
-      gap: 2.5vw;
-      padding: 0px 0px;
+      gap: 3vw;
+      padding: 0px 20px;
 
-      z-index: 4;
+      z-index: 3;
 
       overflow-x: scroll;
       overflow-y: hidden;
