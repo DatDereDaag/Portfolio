@@ -1,12 +1,39 @@
+@use "../../styles/index" as *;
+
 .project-details-container {
   position: fixed;
   inset: 0;
 
   margin: auto;
 
-  width: 50vw;
-  height: 50vh;
-  background-color: black;
+  width: 85vw;
+  height: 90vh;
+  background: $surface-gradient;
+
+  box-shadow:
+    rgba(0, 0, 0, 0.12) 0px 1px 3px,
+    rgba(0, 0, 0, 0.24) 0px 1px 2px;
 
   z-index: 10;
+
+  .close-button {
+    display: flex;
+    position: absolute;
+    top: 1vh;
+    right: 0.5vw;
+
+    border-radius: 25px;
+    border: none;
+
+    padding: 0.4rem;
+
+    &-icon {
+      margin: auto;
+      font-size: 1rem;
+    }
+
+    :hover {
+      cursor: pointer;
+    }
+  }
 }

@@ -1,6 +1,8 @@
 import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
 
+import { FiX } from "react-icons/fi";
+
 import { Project } from "../../types/project";
 import "./index.scss";
 
@@ -11,7 +13,11 @@ interface ProjectDetailsProps {
 
 function ProjectDetails({ project, onClose }: ProjectDetailsProps) {
   return createPortal(
-    <motion.div className="project-details-container"></motion.div>,
+    <motion.div className="project-details-container">
+      <button onClick={onClose} className="close-button">
+        <FiX className="close-button-icon" />
+      </button>
+    </motion.div>,
     document.body,
   );
 }
