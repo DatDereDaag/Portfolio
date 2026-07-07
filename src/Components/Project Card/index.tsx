@@ -14,7 +14,8 @@ function ProjectCard({ project }: ProjectCardProps) {
 
   function handleHoverStart() {
     shardAnimation.start({
-      scale: [null, 1.08],
+      scaleX: [null, 1.05],
+      scaleY: [null, 1.01],
       transition: {
         duration: 0.2,
         ease: "easeInOut",
@@ -36,7 +37,8 @@ function ProjectCard({ project }: ProjectCardProps) {
 
   function handleHoverEnd() {
     shardAnimation.start({
-      scale: [null, 0],
+      scaleY: [null, 0],
+      scaleX: [null, 0],
       transition: {
         duration: 0.25,
         ease: "easeInOut",
@@ -76,40 +78,80 @@ function ProjectCard({ project }: ProjectCardProps) {
       </div>
       <motion.svg
         animate={shardAnimation}
-        className="card-overlay"
-        width="459"
-        height="337"
-        viewBox="0 0 459 317"
+        className="card-shards"
+        width="450"
+        height="310"
+        viewBox="0 0 450 310"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M447.097 21.5363L457.397 20.2426L449.7 28.3253L440.274 29.671L447.097 21.5363Z"
+          d="M423.992 22.672L434.512 21.3506L426.651 29.6057L417.024 30.98L423.992 22.672Z"
           fill="url(#paint0_linear_1_6)"
         />
         <path
-          d="M375.65 10.4683L387.575 1.75356L383.572 17.121L372.771 25.2971L375.65 10.4683Z"
+          d="M401.565 5.43659L406.256 2.71047L404.204 8.17147L399.943 10.744L401.565 5.43659Z"
           fill="url(#paint1_linear_1_6)"
         />
         <path
-          d="M404.084 302.367L406.266 319.734L392.637 306.755L390.368 290.862L404.084 302.367Z"
+          d="M440.215 6.68181L442.877 6.44141L440.823 8.45249L438.385 8.71411L440.215 6.68181Z"
+          fill="url(#paint2_linear_1_6)"
+        />
+        <path
+          d="M352.987 10.6914L365.166 1.79093L361.077 17.486L350.046 25.8364L352.987 10.6914Z"
           fill="url(#paint3_linear_1_6)"
         />
         <path
-          d="M7.97753 13.5356L7.8355 23.2131L1.37203 15.0575L1.35266 6.18069L7.97753 13.5356Z"
+          d="M371.428 295.662L373.656 313.401L359.736 300.144L357.419 283.912L371.428 295.662Z"
           fill="url(#paint4_linear_1_6)"
         />
         <path
-          d="M53.808 8.86763L50.7257 13.4648L50.1659 7.54019L52.9214 3.2767L53.808 8.86763Z"
+          d="M376.323 277.161L378.85 281.34L373.903 279.578L371.521 275.785L376.323 277.161Z"
           fill="url(#paint5_linear_1_6)"
+        />
+        <path
+          d="M331.213 273.644L331.889 275.706L329.923 274.449L329.271 272.568L331.213 273.644Z"
+          fill="url(#paint6_linear_1_6)"
+        />
+        <path
+          d="M339.94 295.174L339.19 300L336.533 295.471L337.146 291.034L339.94 295.174Z"
+          fill="url(#paint7_linear_1_6)"
+        />
+        <path
+          d="M429.976 255.361L432.13 256.917L429.278 257.086L427.279 255.693L429.976 255.361Z"
+          fill="url(#paint8_linear_1_6)"
+        />
+        <path
+          d="M425.581 276.278L427.01 277.912L424.709 277.523L423.373 276.046L425.581 276.278Z"
+          fill="url(#paint9_linear_1_6)"
+        />
+        <path
+          d="M432.969 273.589L436.183 277.266L431.006 276.39L428.002 273.068L432.969 273.589Z"
+          fill="url(#paint10_linear_1_6)"
+        />
+        <path
+          d="M13.8941 67.7599L17.1999 72.6317L11.1336 70.823L8.02677 66.4064L13.8941 67.7599Z"
+          fill="url(#paint11_linear_1_6)"
+        />
+        <path
+          d="M27.9533 44.4228L30.0824 28.962L38.8245 43.285L37.111 57.4961L27.9533 44.4228Z"
+          fill="url(#paint12_linear_1_6)"
+        />
+        <path
+          d="M8.14758 21.2613L8.00253 31.1451L1.40127 22.8157L1.38149 13.7496L8.14758 21.2613Z"
+          fill="url(#paint13_linear_1_6)"
+        />
+        <path
+          d="M53.7668 16.0354L50.6188 20.7307L50.0471 14.6797L52.8613 10.3253L53.7668 16.0354Z"
+          fill="url(#paint14_linear_1_6)"
         />
         <defs>
           <linearGradient
             id="paint0_linear_1_6"
-            x1="447.731"
-            y1="21.3426"
-            x2="449.851"
-            y2="28.2789"
+            x1="424.64"
+            y1="22.4742"
+            x2="426.805"
+            y2="29.5583"
             gradientUnits="userSpaceOnUse"
           >
             <stop stop-color="#3F0404" />
@@ -117,10 +159,21 @@ function ProjectCard({ project }: ProjectCardProps) {
           </linearGradient>
           <linearGradient
             id="paint1_linear_1_6"
-            x1="376.305"
-            y1="9.79017"
-            x2="383.728"
-            y2="16.9587"
+            x1="401.83"
+            y1="5.21398"
+            x2="404.267"
+            y2="8.11819"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#3F0404" />
+            <stop offset="1" stop-color="#651A01" />
+          </linearGradient>
+          <linearGradient
+            id="paint2_linear_1_6"
+            x1="440.379"
+            y1="6.63765"
+            x2="440.863"
+            y2="8.44192"
             gradientUnits="userSpaceOnUse"
           >
             <stop stop-color="#3F0404" />
@@ -128,10 +181,10 @@ function ProjectCard({ project }: ProjectCardProps) {
           </linearGradient>
           <linearGradient
             id="paint3_linear_1_6"
-            x1="404.411"
-            y1="303.435"
-            x2="392.715"
-            y2="307.011"
+            x1="353.656"
+            y1="9.99886"
+            x2="361.237"
+            y2="17.3202"
             gradientUnits="userSpaceOnUse"
           >
             <stop stop-color="#3F0404" />
@@ -139,10 +192,10 @@ function ProjectCard({ project }: ProjectCardProps) {
           </linearGradient>
           <linearGradient
             id="paint4_linear_1_6"
-            x1="8.07416"
-            y1="14.1457"
-            x2="1.39515"
-            y2="15.2035"
+            x1="371.761"
+            y1="296.754"
+            x2="359.816"
+            y2="300.406"
             gradientUnits="userSpaceOnUse"
           >
             <stop stop-color="#3F0404" />
@@ -150,10 +203,109 @@ function ProjectCard({ project }: ProjectCardProps) {
           </linearGradient>
           <linearGradient
             id="paint5_linear_1_6"
-            x1="53.6643"
-            y1="9.19034"
-            x2="50.1315"
-            y2="7.61742"
+            x1="376.527"
+            y1="277.396"
+            x2="373.952"
+            y2="279.635"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#3F0404" />
+            <stop offset="1" stop-color="#651A01" />
+          </linearGradient>
+          <linearGradient
+            id="paint6_linear_1_6"
+            x1="331.278"
+            y1="273.766"
+            x2="329.939"
+            y2="274.478"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#3F0404" />
+            <stop offset="1" stop-color="#651A01" />
+          </linearGradient>
+          <linearGradient
+            id="paint7_linear_1_6"
+            x1="339.946"
+            y1="295.486"
+            x2="336.534"
+            y2="295.545"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#3F0404" />
+            <stop offset="1" stop-color="#651A01" />
+          </linearGradient>
+          <linearGradient
+            id="paint8_linear_1_6"
+            x1="430.129"
+            y1="255.435"
+            x2="429.315"
+            y2="257.104"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#3F0404" />
+            <stop offset="1" stop-color="#651A01" />
+          </linearGradient>
+          <linearGradient
+            id="paint9_linear_1_6"
+            x1="425.689"
+            y1="276.365"
+            x2="424.734"
+            y2="277.544"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#3F0404" />
+            <stop offset="1" stop-color="#651A01" />
+          </linearGradient>
+          <linearGradient
+            id="paint10_linear_1_6"
+            x1="433.211"
+            y1="273.785"
+            x2="431.064"
+            y2="276.437"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#3F0404" />
+            <stop offset="1" stop-color="#651A01" />
+          </linearGradient>
+          <linearGradient
+            id="paint11_linear_1_6"
+            x1="14.1551"
+            y1="68.0302"
+            x2="11.1961"
+            y2="70.8877"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#3F0404" />
+            <stop offset="1" stop-color="#651A01" />
+          </linearGradient>
+          <linearGradient
+            id="paint12_linear_1_6"
+            x1="27.9186"
+            y1="43.4273"
+            x2="38.8162"
+            y2="43.0467"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#3F0404" />
+            <stop offset="1" stop-color="#651A01" />
+          </linearGradient>
+          <linearGradient
+            id="paint13_linear_1_6"
+            x1="8.24628"
+            y1="21.8844"
+            x2="1.42489"
+            y2="22.9648"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#3F0404" />
+            <stop offset="1" stop-color="#651A01" />
+          </linearGradient>
+          <linearGradient
+            id="paint14_linear_1_6"
+            x1="53.6201"
+            y1="16.365"
+            x2="50.0119"
+            y2="14.7586"
             gradientUnits="userSpaceOnUse"
           >
             <stop stop-color="#3F0404" />
