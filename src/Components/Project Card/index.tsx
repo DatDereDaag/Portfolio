@@ -118,18 +118,6 @@ function ProjectCard({ project }: ProjectCardProps) {
           fill="url(#paint7_linear_1_6)"
         />
         <path
-          d="M429.976 255.361L432.13 256.917L429.278 257.086L427.279 255.693L429.976 255.361Z"
-          fill="url(#paint8_linear_1_6)"
-        />
-        <path
-          d="M425.581 276.278L427.01 277.912L424.709 277.523L423.373 276.046L425.581 276.278Z"
-          fill="url(#paint9_linear_1_6)"
-        />
-        <path
-          d="M432.969 273.589L436.183 277.266L431.006 276.39L428.002 273.068L432.969 273.589Z"
-          fill="url(#paint10_linear_1_6)"
-        />
-        <path
           d="M13.8941 67.7599L17.1999 72.6317L11.1336 70.823L8.02677 66.4064L13.8941 67.7599Z"
           fill="url(#paint11_linear_1_6)"
         />
@@ -229,39 +217,6 @@ function ProjectCard({ project }: ProjectCardProps) {
             y1="295.486"
             x2="336.534"
             y2="295.545"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#3F0404" />
-            <stop offset="1" stop-color="#651A01" />
-          </linearGradient>
-          <linearGradient
-            id="paint8_linear_1_6"
-            x1="430.129"
-            y1="255.435"
-            x2="429.315"
-            y2="257.104"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#3F0404" />
-            <stop offset="1" stop-color="#651A01" />
-          </linearGradient>
-          <linearGradient
-            id="paint9_linear_1_6"
-            x1="425.689"
-            y1="276.365"
-            x2="424.734"
-            y2="277.544"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#3F0404" />
-            <stop offset="1" stop-color="#651A01" />
-          </linearGradient>
-          <linearGradient
-            id="paint10_linear_1_6"
-            x1="433.211"
-            y1="273.785"
-            x2="431.064"
-            y2="276.437"
             gradientUnits="userSpaceOnUse"
           >
             <stop stop-color="#3F0404" />
