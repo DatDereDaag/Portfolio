@@ -6,8 +6,8 @@
 
   margin: auto;
 
-  width: 80vw;
-  height: 85vh;
+  width: 70vw;
+  height: 82vh;
   background: $surface-gradient;
 
   box-shadow:
@@ -55,5 +55,21 @@
 
     font-family: $main-font;
     font-size: 2.75rem;
+  }
+
+  .image-background-shapes {
+  }
+
+  .project-slide {
+    display: flex;
+    flex-direction: row;
+
+    .slide {
+      display: flex;
+      flex-direction: row;
+
+      .details {
+      }
+    }
   }
 }

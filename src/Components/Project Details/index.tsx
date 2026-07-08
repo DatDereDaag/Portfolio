@@ -18,6 +18,13 @@ function ProjectDetails({ project, onClose }: ProjectDetailsProps) {
         <FiX className="close-button-icon" />
       </button>
       <h1 className="project-title">{project.title}</h1>
+      <div className="image-background-shapes"></div>
+      <div className="project-slide">
+        <div className="slide">
+          <img />
+          <div className="details"></div>
+        </div>
+      </div>
     </motion.div>,
     document.body,
   );
