@@ -4,10 +4,11 @@
   &-background {
     position: relative;
     top: 5vh;
-    width: 30vw;
+    width: 28.2vw;
     height: 42vh;
 
     flex-shrink: 0;
+    margin-left: 1vw;
 
     z-index: 4;
 
@@ -124,7 +125,7 @@
     color: white;
     background: $card-header-gradient;
 
-    width: 22vw;
+    width: 21vw;
 
     clip-path: $card-title-shape;
 
