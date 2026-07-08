@@ -124,10 +124,6 @@ function ProjectCard({ project, onSelect }: ProjectCardProps) {
           fill="url(#paint11_linear_1_6)"
         />
         <path
-          d="M27.9533 44.4228L30.0824 28.962L38.8245 43.285L37.111 57.4961L27.9533 44.4228Z"
-          fill="url(#paint12_linear_1_6)"
-        />
-        <path
           d="M8.14758 21.2613L8.00253 31.1451L1.40127 22.8157L1.38149 13.7496L8.14758 21.2613Z"
           fill="url(#paint13_linear_1_6)"
         />
@@ -230,17 +226,6 @@ function ProjectCard({ project, onSelect }: ProjectCardProps) {
             y1="68.0302"
             x2="11.1961"
             y2="70.8877"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#3F0404" />
-            <stop offset="1" stop-color="#651A01" />
-          </linearGradient>
-          <linearGradient
-            id="paint12_linear_1_6"
-            x1="27.9186"
-            y1="43.4273"
-            x2="38.8162"
-            y2="43.0467"
             gradientUnits="userSpaceOnUse"
           >
             <stop stop-color="#3F0404" />

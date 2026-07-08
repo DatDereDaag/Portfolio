@@ -17,6 +17,7 @@ function ProjectDetails({ project, onClose }: ProjectDetailsProps) {
       <button onClick={onClose} className="close-button">
         <FiX className="close-button-icon" />
       </button>
+      <h1 className="project-title">{project.title}</h1>
     </motion.div>,
     document.body,
   );
