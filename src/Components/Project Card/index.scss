@@ -28,7 +28,7 @@
   transition: filter 0.2s ease-in-out;
 
   &.github {
-    bottom: 19vh;
+    bottom: 26vh;
 
     background: $github-gradient;
     padding: 5px 10px;
@@ -39,7 +39,7 @@
   }
 
   &.demo {
-    bottom: 12vh;
+    bottom: 19vh;
 
     background: $demo-gradient;
     padding: 5px 15px;

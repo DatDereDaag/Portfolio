@@ -20,8 +20,8 @@ function Home() {
     if (window.FinisherHeader) {
       new window.FinisherHeader({
         count: 35,
-        size: { min: 400, max: 1500, pulse: 0.6 },
-        speed: { x: { min: 0.8, max: 1 }, y: { min: 0.1, max: 0.6 } },
+        size: { min: 350, max: 1250, pulse: 0.6 },
+        speed: { x: { min: 0.8, max: 3 }, y: { min: 0.5, max: 1 } },
         colors: {
           background: "#54062d",
           particles: [
@@ -29,7 +29,7 @@ function Home() {
             "#7d0202",
             "#170006",
             "#420202",
-            "#912400",
+            "#691d03",
             "#2200c9",
           ],
         },
