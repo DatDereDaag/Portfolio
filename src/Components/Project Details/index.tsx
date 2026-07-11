@@ -25,12 +25,11 @@ function ProjectDetails({ project, onClose }: ProjectDetailsProps) {
           <div className="background-shape two"></div>
           <div className="background-shape three"></div>
         </div>
-        <div className="project-slide">
-          <div className="slide">
-            <img />
-            <div className="details"></div>
-          </div>
-        </div>
+        <img
+          className={`project-img ${project.cardType}`}
+          src={project.detailImages[0]}
+        />
+        <div className="project-details"></div>
       </motion.div>
     </>,
     document.body,

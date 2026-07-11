@@ -17,8 +17,8 @@
 
   margin: auto;
 
-  width: 62vw;
-  height: 74vh;
+  width: 65vw;
+  height: 85vh;
   background: $surface-gradient;
 
   box-shadow:
@@ -127,16 +127,32 @@
     }
   }
 
-  .project-slide {
-    display: flex;
-    flex-direction: row;
+  .project-img {
+    position: absolute;
 
-    .slide {
-      display: flex;
-      flex-direction: row;
+    object-fit: fill;
 
-      .details {
-      }
+    border-radius: 10px;
+
+    &.desktop {
+      width: 55vw;
+      height: auto;
+
+      top: 10vh;
+      left: 3vw;
     }
+
+    &.mobile {
+      height: 73vh;
+      width: auto;
+
+      top: 9vh;
+      left: 4vw;
+    }
+
+    z-index: 20;
+  }
+
+  .project-details {
   }
 }
