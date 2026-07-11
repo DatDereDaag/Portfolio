@@ -7,7 +7,6 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 import projects from "../../data/projects.json";
 import { Project } from "../../types/project";
-import ProjectDetails from "../Project Details";
 
 interface ContentSliderProps {
   selected: string;
@@ -15,9 +14,6 @@ interface ContentSliderProps {
 
 function ContentSlider({ selected }: ContentSliderProps) {
   const sliderRef = useRef<HTMLDivElement>(null);
-
-  //Project Details State
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   //Content Slider Arrow State
   const [atStart, setAtStart] = useState(true);
@@ -75,23 +71,10 @@ function ContentSlider({ selected }: ContentSliderProps) {
         </button>
         <div className="slider" ref={sliderRef} onScroll={checkScroll}>
           {(projects as Project[]).map((project) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              onSelect={() => setSelectedProject(project)}
-            />
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </div>
-
-      <AnimatePresence>
-        {selectedProject && (
-          <ProjectDetails
-            project={selectedProject}
-            onClose={() => setSelectedProject(null)}
-          />
-        )}
-      </AnimatePresence>
     </div>
   );
 }

@@ -15,11 +15,6 @@
       "src/assets/images/projects/BakerySuiteApp/Customer_Home.png",
       "src/assets/images/projects/BakerySuiteApp/Customer_Store.png",
       "src/assets/images/projects/BakerySuiteApp/Customer_Schedule.png"
-    ],
-    "detailImages": [
-      "src/assets/images/projects/BakerySuiteApp/Customer_Home.png",
-      "src/assets/images/projects/BakerySuiteApp/Customer_Store.png",
-      "src/assets/images/projects/BakerySuiteApp/Customer_Schedule.png"
     ]
   },
   {
@@ -35,11 +30,6 @@
     ],
     "tags": ["python", "docker", "fastapi"],
     "cardImages": [
-      "src/assets/images/projects/DataLakehouse/MinIO.png",
-      "src/assets/images/projects/DataLakehouse/Airflow.png",
-      "src/assets/images/projects/DataLakehouse/DBT API.png"
-    ],
-    "detailImages": [
       "src/assets/images/projects/DataLakehouse/MinIO.png",
       "src/assets/images/projects/DataLakehouse/Airflow.png",
       "src/assets/images/projects/DataLakehouse/DBT API.png"
@@ -61,11 +51,6 @@
       "src/assets/images/projects/StudentIncentive/student_home.png",
       "src/assets/images/projects/StudentIncentive/staff_requests.png",
       "src/assets/images/projects/StudentIncentive/student_leaderboards.png"
-    ],
-    "detailImages": [
-      "src/assets/images/projects/StudentIncentive/student_home.png",
-      "src/assets/images/projects/StudentIncentive/staff_requests.png",
-      "src/assets/images/projects/StudentIncentive/student_leaderboards.png"
     ]
   },
   {
@@ -81,11 +66,6 @@
     ],
     "tags": ["firebase", "javascript", "html", "css"],
     "cardImages": [
-      "src/assets/images/projects/Fit.io/Homepage.png",
-      "src/assets/images/projects/Fit.io/BMI.png",
-      "src/assets/images/projects/Fit.io/Routine.png"
-    ],
-    "detailImages": [
       "src/assets/images/projects/Fit.io/Homepage.png",
       "src/assets/images/projects/Fit.io/BMI.png",
       "src/assets/images/projects/Fit.io/Routine.png"

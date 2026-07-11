@@ -6,10 +6,9 @@ import { motion, useAnimation } from "framer-motion";
 
 interface ProjectCardProps {
   project: Project;
-  onSelect: () => void;
 }
 
-function ProjectCard({ project, onSelect }: ProjectCardProps) {
+function ProjectCard({ project }: ProjectCardProps) {
   const shardAnimation = useAnimation();
   const imageAnimation = useAnimation();
 
@@ -64,7 +63,6 @@ function ProjectCard({ project, onSelect }: ProjectCardProps) {
       className="card-background"
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
-      onClick={onSelect}
     >
       <div className="card-title">{project.title}</div>
       <div className="card-images">

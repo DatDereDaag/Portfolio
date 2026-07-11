@@ -7,5 +7,4 @@ export interface Project {
   bullets: string[];
   tags: string[];
   cardImages: string[];
-  detailImages: string[];
 }
