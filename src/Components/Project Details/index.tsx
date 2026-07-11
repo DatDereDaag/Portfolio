@@ -13,19 +13,26 @@ interface ProjectDetailsProps {
 
 function ProjectDetails({ project, onClose }: ProjectDetailsProps) {
   return createPortal(
-    <motion.div className="project-details-container">
-      <button onClick={onClose} className="close-button">
-        <FiX className="close-button-icon" />
-      </button>
-      <h1 className="project-title">{project.title}</h1>
-      <div className="image-background-shapes"></div>
-      <div className="project-slide">
-        <div className="slide">
-          <img />
-          <div className="details"></div>
+    <>
+      <motion.div className="screen-dimmer"></motion.div>
+      <motion.div className="project-details-container">
+        <button onClick={onClose} className="close-button">
+          <FiX className="close-button-icon" />
+        </button>
+        <h1 className="project-title">{project.title}</h1>
+        <div id="project-background-shapes">
+          <div className="background-shape one"></div>
+          <div className="background-shape two"></div>
+          <div className="background-shape three"></div>
         </div>
-      </div>
-    </motion.div>,
+        <div className="project-slide">
+          <div className="slide">
+            <img />
+            <div className="details"></div>
+          </div>
+        </div>
+      </motion.div>
+    </>,
     document.body,
   );
 }
