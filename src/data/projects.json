@@ -15,7 +15,9 @@
       "src/assets/images/projects/BakerySuiteApp/Customer_Home.png",
       "src/assets/images/projects/BakerySuiteApp/Customer_Store.png",
       "src/assets/images/projects/BakerySuiteApp/Customer_Schedule.png"
-    ]
+    ],
+    "githubURL": "https://github.com/Bread-Van-Group/Bread_Van_Project",
+    "demoURL": "https://youtu.be/tEhma9kqqpc?si=EFIyIOzqvYc93Sl4"
   },
   {
     "id": "data-lakehouse",
@@ -33,7 +35,9 @@
       "src/assets/images/projects/DataLakehouse/MinIO.png",
       "src/assets/images/projects/DataLakehouse/Airflow.png",
       "src/assets/images/projects/DataLakehouse/DBT API.png"
-    ]
+    ],
+    "githubURL": "https://github.com/Data-Lakehouse-Group/Multi-domain-Data-Lakehouse",
+    "demoURL": "https://youtu.be/tEhma9kqqpc?si=EFIyIOzqvYc93Sl4"
   },
   {
     "id": "student-incentive",
@@ -51,7 +55,9 @@
       "src/assets/images/projects/StudentIncentive/student_home.png",
       "src/assets/images/projects/StudentIncentive/staff_requests.png",
       "src/assets/images/projects/StudentIncentive/student_leaderboards.png"
-    ]
+    ],
+    "githubURL": "https://github.com/COMP3613-Project-NonchalantDhalpuri/Comp3613Project",
+    "demoURL": "https://youtu.be/J8iNOlpzQKM?si=W0_6nWDAYpkdlqzC"
   },
   {
     "id": "fit-io",
@@ -69,6 +75,8 @@
       "src/assets/images/projects/Fit.io/Homepage.png",
       "src/assets/images/projects/Fit.io/BMI.png",
       "src/assets/images/projects/Fit.io/Routine.png"
-    ]
+    ],
+    "githubURL": "https://github.com/DatDereDaag/Fit.io",
+    "demoURL": "https://youtu.be/J8iNOlpzQKM?si=W0_6nWDAYpkdlqzC"
   }
 ]

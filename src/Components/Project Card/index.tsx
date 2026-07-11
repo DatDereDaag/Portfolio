@@ -19,9 +19,27 @@ function ProjectCard({ project }: ProjectCardProps) {
   const demoBtnAnimation = useAnimation();
 
   function handleHoverStart() {
+    githubBtnAnimation.start({
+      scaleX: [0, 1.05],
+      scaleY: [0, 1.01],
+      transition: {
+        duration: 0.2,
+        ease: "easeInOut",
+      },
+    });
+
+    demoBtnAnimation.start({
+      scaleX: [0, 1.05],
+      scaleY: [0, 1.01],
+      transition: {
+        duration: 0.2,
+        ease: "easeInOut",
+      },
+    });
+
     shardAnimation.start({
-      scaleX: [null, 1.05],
-      scaleY: [null, 1.01],
+      scaleX: [0, 1.05],
+      scaleY: [0, 1.01],
       transition: {
         duration: 0.2,
         ease: "easeInOut",
@@ -34,6 +52,7 @@ function ProjectCard({ project }: ProjectCardProps) {
       rotateZ: [null, 2 + index * 5],
       rotateX: [null, -10 - index * 10],
       rotateY: [null, -2 - index * 2],
+      ...(index === 0 && { filter: "brightness(0.6)" }),
       transition: {
         duration: 0.3,
         ease: "easeInOut",
@@ -42,6 +61,24 @@ function ProjectCard({ project }: ProjectCardProps) {
   }
 
   function handleHoverEnd() {
+    githubBtnAnimation.start({
+      scaleX: [null, 0],
+      scaleY: [null, 0],
+      transition: {
+        duration: 0.15,
+        ease: "easeInOut",
+      },
+    });
+
+    demoBtnAnimation.start({
+      scaleX: [null, 0],
+      scaleY: [null, 0],
+      transition: {
+        duration: 0.15,
+        ease: "easeInOut",
+      },
+    });
+
     shardAnimation.start({
       scaleY: [null, 0],
       scaleX: [null, 0],
@@ -57,6 +94,7 @@ function ProjectCard({ project }: ProjectCardProps) {
       rotateZ: [null, 0],
       rotateY: [null, 0],
       rotateX: [null, 0],
+      ...(index === 0 && { filter: "brightness(0.8)" }),
       transition: {
         duration: 0.25,
         ease: "easeInOut",
@@ -70,14 +108,28 @@ function ProjectCard({ project }: ProjectCardProps) {
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
     >
-      <motion.button className="card-button github">
+      <motion.a
+        id="githubBtn"
+        animate={githubBtnAnimation}
+        className="card-button github"
+        target="_blank"
+        rel="noreferrer"
+        href={project.githubURL}
+      >
         <FontAwesomeIcon icon={faGithub} />
         <span>Github</span>
-      </motion.button>
-      <motion.button className="card-button demo">
+      </motion.a>
+      <motion.a
+        id="demoBtn"
+        animate={demoBtnAnimation}
+        className="card-button demo"
+        target="_blank"
+        rel="noreferrer"
+        href={project.demoURL}
+      >
         <FontAwesomeIcon icon={faPlay} />
         <span>Demo</span>
-      </motion.button>
+      </motion.a>
       <div className="card-title">{project.title}</div>
       <div className="card-images">
         {(project.cardImages as string[]).map((image, index) => (
