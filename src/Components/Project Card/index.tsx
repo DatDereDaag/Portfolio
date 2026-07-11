@@ -1,8 +1,11 @@
 import "./index.scss";
 import { Project } from "../../types/project";
 import { FiCheckCircle } from "react-icons/fi";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 import { motion, useAnimation } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface ProjectCardProps {
   project: Project;
@@ -11,6 +14,9 @@ interface ProjectCardProps {
 function ProjectCard({ project }: ProjectCardProps) {
   const shardAnimation = useAnimation();
   const imageAnimation = useAnimation();
+
+  const githubBtnAnimation = useAnimation();
+  const demoBtnAnimation = useAnimation();
 
   function handleHoverStart() {
     shardAnimation.start({
@@ -64,6 +70,14 @@ function ProjectCard({ project }: ProjectCardProps) {
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
     >
+      <motion.button className="card-button github">
+        <FontAwesomeIcon icon={faGithub} />
+        <span>Github</span>
+      </motion.button>
+      <motion.button className="card-button demo">
+        <FontAwesomeIcon icon={faPlay} />
+        <span>Demo</span>
+      </motion.button>
       <div className="card-title">{project.title}</div>
       <div className="card-images">
         {(project.cardImages as string[]).map((image, index) => (

@@ -1,5 +1,36 @@
 @use "../../styles/index" as *;
 
+.card-button {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: -1vw;
+
+  font-size: 1.5vw;
+  font-family: $main-font;
+
+  z-index: 8;
+  &.github {
+    bottom: 19vh;
+
+    padding: 5px 10px;
+
+    span {
+      padding-left: 5px;
+    }
+  }
+
+  &.demo {
+    bottom: 12vh;
+
+    padding: 5px 15px;
+
+    span {
+      padding-left: 8px;
+    }
+  }
+}
+
 .card {
   &-background {
     position: relative;
@@ -116,7 +147,7 @@
     left: 6vw;
 
     font-family: $main-font;
-    font-size: 1.5rem;
+    font-size: 1.5vw;
     font-weight: 600;
     font-style: bold;
     letter-spacing: 0.1px;
@@ -164,7 +195,7 @@
     //Typography of elements below
     &-bullets {
       font-family: $main-font;
-      font-size: 1.09rem;
+      font-size: 1.03vw;
       font-weight: 500;
       letter-spacing: 0.35px;
 
