@@ -2,7 +2,7 @@ import ProjectCard from "../Project Card";
 import "./index.scss";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 import projects from "../../data/projects.json";
@@ -14,30 +14,70 @@ interface ContentSliderProps {
 
 function ContentSlider({ selected }: ContentSliderProps) {
   const sliderRef = useRef<HTMLDivElement>(null);
+  const isScrolling = useRef(false);
 
-  //Content Slider Arrow State
-  const [atStart, setAtStart] = useState(true);
-  const [atEnd, setAtEnd] = useState(false);
+  //Content Slider Cloned Elements
+  const CLONE_COUNT = 4;
+  const CARD_GAP_VW = 4;
 
-  function checkScroll() {
-    if (!sliderRef.current) return;
+  const clonedProjects = [
+    ...(projects as Project[]).slice(-CLONE_COUNT),
+    ...(projects as Project[]),
+    ...(projects as Project[]).slice(0, CLONE_COUNT),
+  ];
 
-    const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
-
-    setAtStart(scrollLeft <= 0);
-    setAtEnd(scrollLeft + clientWidth >= scrollWidth - 10);
-  }
-
-  function scroll(direction: "left" | "right") {
-    if (!sliderRef.current) return;
+  function getScrollMetrics(): {
+    cloneWidth: number;
+    increment: number;
+    gap: number;
+  } {
+    if (!sliderRef.current || isScrolling.current)
+      return { cloneWidth: 0, increment: 0, gap: 0 };
 
     const cardWidth = sliderRef.current.firstElementChild?.clientWidth ?? 0;
-    const gap = 57.6;
+    const gap = (window.innerWidth * CARD_GAP_VW) / 100;
+    const increment = cardWidth + gap;
+    const cloneWidth = increment * CLONE_COUNT;
+
+    return { cloneWidth, increment, gap };
+  }
+
+  useEffect(() => {
+    if (!sliderRef.current || isScrolling.current) return;
+    const { cloneWidth } = getScrollMetrics();
+    sliderRef.current.scrollLeft = cloneWidth;
+  }, []);
+
+  function scroll(direction: "left" | "right") {
+    if (!sliderRef.current || isScrolling.current) return;
+
+    const { cloneWidth, increment, gap } = getScrollMetrics();
+
+    isScrolling.current = true;
 
     sliderRef.current.scrollBy({
-      left: direction === "right" ? cardWidth + gap : -(cardWidth + gap),
+      left: direction === "right" ? increment : -increment,
       behavior: "smooth",
     });
+
+    //Loop scroll wheel
+    setTimeout(() => {
+      if (!sliderRef.current) return;
+
+      const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
+
+      sliderRef.current.style.scrollBehavior = "auto";
+
+      if (scrollLeft >= scrollWidth - clientWidth - increment - gap) {
+        sliderRef.current.scrollLeft = cloneWidth;
+      }
+
+      if (scrollLeft <= cloneWidth - clientWidth) {
+        sliderRef.current.scrollLeft = cloneWidth;
+      }
+
+      isScrolling.current = false;
+    }, 600);
   }
 
   return (
@@ -57,21 +97,15 @@ function ContentSlider({ selected }: ContentSliderProps) {
       </h1>
       <div className="divider"></div>
       <div className="content-background">
-        <button
-          className={`slider-arrow left ${atStart ? "disabled" : "enabled"}`}
-          onClick={() => scroll("left")}
-        >
+        <button className="slider-arrow left" onClick={() => scroll("left")}>
           <FiChevronLeft />
         </button>
-        <button
-          className={`slider-arrow right ${atEnd ? "disabled" : "enabled"}`}
-          onClick={() => scroll("right")}
-        >
+        <button className="slider-arrow right" onClick={() => scroll("right")}>
           <FiChevronRight />
         </button>
-        <div className="slider" ref={sliderRef} onScroll={checkScroll}>
-          {(projects as Project[]).map((project) => (
-            <ProjectCard key={project.id} project={project} />
+        <div className="slider" ref={sliderRef}>
+          {(clonedProjects as Project[]).map((project, index) => (
+            <ProjectCard key={project.id + "." + index} project={project} />
           ))}
         </div>
       </div>

@@ -63,11 +63,15 @@
     height: 42vh;
 
     flex-shrink: 0;
-    margin-left: 1vw;
+    margin-right: 4vw;
 
     z-index: 4;
 
     transition: all 0.3s ease-in-out;
+
+    &:nth-child(1) {
+      margin-left: 4vw;
+    }
 
     &:hover {
       cursor: pointer;
