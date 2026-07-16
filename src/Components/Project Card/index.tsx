@@ -60,13 +60,14 @@ function ProjectCard({ project }: ProjectCardProps) {
 
     imageAnimation.start((index) => ({
       y: [null, -20 * index * 1],
-      x: [null, 30 * index * 1],
+      x: [null, 30 * index * 0.7],
       rotateZ: [null, 2 + index * 5],
       rotateY: [null, -2 - index * 2],
       rotateX: [null, -10 - index * 10],
       ...(index === 0 && { filter: "brightness(0.6)" }),
       transition: {
-        duration: 0.3,
+        duration: 0.25,
+        delay: index * 0.04,
         ease: "easeInOut",
       },
     }));

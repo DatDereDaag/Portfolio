@@ -17,7 +17,7 @@ function ContentSlider({ selected }: ContentSliderProps) {
   const isScrolling = useRef(false);
 
   //Content Slider Cloned Elements
-  const CLONE_COUNT = 4;
+  const CLONE_COUNT = projects.length;
   const CARD_GAP_VW = 4;
 
   const clonedProjects = [
