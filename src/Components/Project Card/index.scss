@@ -96,31 +96,18 @@
 
       &:nth-child(1) {
         z-index: 7;
-
         top: 4vh;
-
-        filter: brightness(0.8);
       }
 
       &:nth-child(2) {
         z-index: 6;
-
-        transform: rotatey(20deg);
-
         left: 5vw;
         top: 2vh;
-
-        filter: brightness(0.5);
       }
 
       &:nth-child(3) {
         z-index: 5;
-
-        transform: rotatey(20deg);
-
         left: 9vw;
-
-        filter: brightness(0.3);
       }
     }
     .card-image-desktop {
@@ -138,33 +125,20 @@
 
       &:nth-child(1) {
         z-index: 7;
-
         top: 16vh;
         left: -1vw;
-
-        filter: brightness(0.8);
       }
 
       &:nth-child(2) {
         z-index: 6;
-
-        transform: rotatey(10deg);
-
         top: 7vh;
         left: 1vw;
-
-        filter: brightness(0.5);
       }
 
       &:nth-child(3) {
         z-index: 5;
-
-        transform: rotatey(20deg);
-
         top: 0vh;
         left: 4vw;
-
-        filter: brightness(0.3);
       }
     }
   }

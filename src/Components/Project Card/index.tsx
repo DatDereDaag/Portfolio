@@ -18,6 +18,18 @@ function ProjectCard({ project }: ProjectCardProps) {
   const githubBtnAnimation = useAnimation();
   const demoBtnAnimation = useAnimation();
 
+  const imageBrightnesses: Record<number, number> = {
+    0: 0.8,
+    1: 0.5,
+    2: 0.3,
+  };
+
+  const imageRotationsY: Record<number, number> = {
+    0: 0,
+    1: 20,
+    2: 20,
+  };
+
   function handleHoverStart() {
     githubBtnAnimation.start({
       scaleX: [0, 1.05],
@@ -50,8 +62,8 @@ function ProjectCard({ project }: ProjectCardProps) {
       y: [null, -20 * index * 1],
       x: [null, 30 * index * 1],
       rotateZ: [null, 2 + index * 5],
-      rotateX: [null, -10 - index * 10],
       rotateY: [null, -2 - index * 2],
+      rotateX: [null, -10 - index * 10],
       ...(index === 0 && { filter: "brightness(0.6)" }),
       transition: {
         duration: 0.3,
@@ -89,12 +101,12 @@ function ProjectCard({ project }: ProjectCardProps) {
     });
 
     imageAnimation.start((index) => ({
-      y: [null, 0],
-      x: [null, 0],
-      rotateZ: [null, 0],
-      rotateY: [null, 0],
-      rotateX: [null, 0],
-      ...(index === 0 && { filter: "brightness(0.8)" }),
+      y: 0,
+      x: 0,
+      rotateZ: 0,
+      rotateY: imageRotationsY[index] ?? 0,
+      rotateX: 0,
+      filter: `brightness(${imageBrightnesses[index] ?? 1})`,
       transition: {
         duration: 0.25,
         ease: "easeInOut",
@@ -137,8 +149,17 @@ function ProjectCard({ project }: ProjectCardProps) {
             src={image}
             custom={index}
             animate={imageAnimation}
+            initial={{
+              y: 0,
+              x: 0,
+              rotateZ: 0,
+              rotateY: imageRotationsY[index] ?? 0,
+              rotateX: 0,
+              filter: `brightness(${imageBrightnesses[index] ?? 1})`,
+            }}
             alt={`card-image-${project.cardType} `}
             className={`card-image-${project.cardType} `}
+            style={{ willChange: "transform, filter" }}
           />
         ))}
       </div>

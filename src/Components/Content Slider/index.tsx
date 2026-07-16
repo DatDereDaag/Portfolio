@@ -2,7 +2,7 @@ import ProjectCard from "../Project Card";
 import "./index.scss";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 import projects from "../../data/projects.json";
@@ -77,7 +77,7 @@ function ContentSlider({ selected }: ContentSliderProps) {
       }
 
       isScrolling.current = false;
-    }, 600);
+    }, 550);
   }
 
   return (
