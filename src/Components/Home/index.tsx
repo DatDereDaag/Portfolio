@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import ContentSlider from "../Content Slider";
+import ContentSlider from "../Content Section";
 import NavMenu from "../Nav Menu";
 
 declare global {
