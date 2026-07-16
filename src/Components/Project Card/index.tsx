@@ -15,8 +15,7 @@ function ProjectCard({ project }: ProjectCardProps) {
   const shardAnimation = useAnimation();
   const imageAnimation = useAnimation();
 
-  const githubBtnAnimation = useAnimation();
-  const demoBtnAnimation = useAnimation();
+  const buttonAnimation = useAnimation();
 
   const imageBrightnesses: Record<number, number> = {
     0: 0.8,
@@ -31,20 +30,11 @@ function ProjectCard({ project }: ProjectCardProps) {
   };
 
   function handleHoverStart() {
-    githubBtnAnimation.start({
-      scaleX: [0, 1.05],
-      scaleY: [0, 1.01],
+    buttonAnimation.start({
+      x: [-50, 0],
+      opacity: [0, 1],
       transition: {
-        duration: 0.2,
-        ease: "easeInOut",
-      },
-    });
-
-    demoBtnAnimation.start({
-      scaleX: [0, 1.05],
-      scaleY: [0, 1.01],
-      transition: {
-        duration: 0.2,
+        duration: 0.3,
         ease: "easeInOut",
       },
     });
@@ -74,18 +64,9 @@ function ProjectCard({ project }: ProjectCardProps) {
   }
 
   function handleHoverEnd() {
-    githubBtnAnimation.start({
-      scaleX: [null, 0],
-      scaleY: [null, 0],
-      transition: {
-        duration: 0.15,
-        ease: "easeInOut",
-      },
-    });
-
-    demoBtnAnimation.start({
-      scaleX: [null, 0],
-      scaleY: [null, 0],
+    buttonAnimation.start({
+      x: [null, -80],
+      opacity: [null, 0],
       transition: {
         duration: 0.15,
         ease: "easeInOut",
@@ -121,28 +102,30 @@ function ProjectCard({ project }: ProjectCardProps) {
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
     >
-      <motion.a
-        id="githubBtn"
-        animate={githubBtnAnimation}
-        className="card-button github"
-        target="_blank"
-        rel="noreferrer"
-        href={project.githubURL}
+      <motion.div
+        className="card-buttons"
+        animate={buttonAnimation}
+        initial={{ opacity: 0, x: -50 }}
       >
-        <FontAwesomeIcon icon={faGithub} />
-        <span>Github</span>
-      </motion.a>
-      <motion.a
-        id="demoBtn"
-        animate={demoBtnAnimation}
-        className="card-button demo"
-        target="_blank"
-        rel="noreferrer"
-        href={project.demoURL}
-      >
-        <FontAwesomeIcon icon={faPlay} />
-        <span>Demo</span>
-      </motion.a>
+        <motion.a
+          className="button github"
+          href={project.githubURL}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FontAwesomeIcon icon={faGithub} />
+          <span>Github</span>
+        </motion.a>
+        <motion.a
+          className="button demo"
+          href={project.demoURL}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FontAwesomeIcon icon={faPlay} />
+          <span>Demo</span>
+        </motion.a>
+      </motion.div>
       <div className="card-title">{project.title}</div>
       <div className="card-images">
         {(project.cardImages as string[]).map((image, index) => (
