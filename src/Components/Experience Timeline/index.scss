@@ -9,4 +9,18 @@
 }
 
 .year-markers {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  top: 44%;
+
+  display: flex;
+  justify-content: space-between;
+
+  width: 95%;
+
+  span {
+    font-size: 2.4vh;
+    color: $text-colour;
+  }
 }

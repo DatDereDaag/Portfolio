@@ -1,8 +1,26 @@
 import "./index.scss";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 function ExperienceTimeline() {
+  const yearMarkerVariants: Variants = {
+    visible: {
+      transition: {
+        duration: 1.1,
+        staggerChildren: 0.35,
+      },
+    },
+  };
+
+  const markerVariants: Variants = {
+    hidden: { opacity: 0, y: -15 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.35, ease: "easeOut" },
+    },
+  };
+
   return (
     <>
       <svg
@@ -26,7 +44,16 @@ function ExperienceTimeline() {
           stroke-linecap="round"
         />
       </svg>
-      <div className="year-markers"></div>
+      <motion.div
+        variants={yearMarkerVariants}
+        initial="hidden"
+        whileInView="visible"
+        className="year-markers"
+      >
+        <motion.span variants={markerVariants}>2024</motion.span>
+        <motion.span variants={markerVariants}>2025</motion.span>
+        <motion.span variants={markerVariants}>2026</motion.span>
+      </motion.div>
     </>
   );
 }
