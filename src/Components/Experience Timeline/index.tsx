@@ -3,6 +3,8 @@ import "./index.scss";
 import { motion, Variants } from "framer-motion";
 
 function ExperienceTimeline() {
+  function getYearMarkers() {}
+
   const yearMarkerVariants: Variants = {
     visible: {
       transition: {
@@ -50,10 +52,22 @@ function ExperienceTimeline() {
         whileInView="visible"
         className="year-markers"
       >
-        <motion.span variants={markerVariants}>2024</motion.span>
         <motion.span variants={markerVariants}>2025</motion.span>
         <motion.span variants={markerVariants}>2026</motion.span>
+        <motion.span variants={markerVariants}>Present</motion.span>
       </motion.div>
+      <div className="experience-container">
+        <div className="experience-marker">
+          <div className="marker-header">IT Intern</div>
+          <div className="marker-body"></div>
+          <div className="marker-area"></div>
+        </div>
+        <div className="experience-marker">
+          <div className="marker-header">Helpdesk Assistant</div>
+          <div className="marker-body"></div>
+          <div className="marker-area"></div>
+        </div>
+      </div>
     </>
   );
 }

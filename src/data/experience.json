@@ -1,0 +1,18 @@
+[
+  {
+    "id": "scotiabank-intern",
+    "title": "IT Intern",
+    "company": "Scotiabank",
+    "startDate": "2025-06",
+    "endDate": "2025-09",
+    "bullets": ["Bullet one", "Bullet two"]
+  },
+  {
+    "id": "helpdesk",
+    "title": "Helpdesk Assistant",
+    "company": "UWI",
+    "startDate": "2025-09",
+    "endDate": "2026-03",
+    "bullets": ["Bullet one", "Bullet two"]
+  }
+]
