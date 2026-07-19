@@ -2,14 +2,38 @@ import "./index.scss";
 
 import { motion, Variants } from "framer-motion";
 
+interface YearMarker {
+  yearLabel: string;
+  offset: number;
+}
+
 function ExperienceTimeline() {
-  function getYearMarkers() {}
+  const TIMELINE_START = 2025;
+  const TIMELINE_YEAR_ANIMATION_DURATION = 1.05;
+
+  function getYearMarkers(): YearMarker[] {
+    const now = new Date();
+    const presentYear = now.getFullYear();
+    const yearMarkers: YearMarker[] = [];
+    let monthOffset = now.getMonth();
+
+    for (let year = TIMELINE_START; year <= presentYear; year++) {
+      yearMarkers.push({ yearLabel: year.toString(), offset: monthOffset });
+      monthOffset += 12;
+    }
+
+    yearMarkers.push({ yearLabel: "Present", offset: monthOffset });
+
+    return yearMarkers;
+  }
+
+  const yearMarkers: YearMarker[] = getYearMarkers();
 
   const yearMarkerVariants: Variants = {
     visible: {
       transition: {
-        duration: 1.1,
-        staggerChildren: 0.35,
+        duration: TIMELINE_YEAR_ANIMATION_DURATION,
+        staggerChildren: TIMELINE_YEAR_ANIMATION_DURATION / yearMarkers.length,
       },
     },
   };
@@ -19,7 +43,10 @@ function ExperienceTimeline() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.35, ease: "easeOut" },
+      transition: {
+        duration: TIMELINE_YEAR_ANIMATION_DURATION / yearMarkers.length,
+        ease: "easeOut",
+      },
     },
   };
 
@@ -52,9 +79,14 @@ function ExperienceTimeline() {
         whileInView="visible"
         className="year-markers"
       >
-        <motion.span variants={markerVariants}>2025</motion.span>
-        <motion.span variants={markerVariants}>2026</motion.span>
-        <motion.span variants={markerVariants}>Present</motion.span>
+        {(yearMarkers as YearMarker[]).map((marker) => (
+          <motion.span
+            variants={markerVariants}
+            style={{ gridColumn: `${marker.offset}` }}
+          >
+            {marker.yearLabel}
+          </motion.span>
+        ))}
       </motion.div>
       <div className="experience-container">
         <div className="experience-marker">
