@@ -15,7 +15,7 @@ function ExperienceTimeline() {
     const now = new Date();
     const presentYear = now.getFullYear();
     const yearMarkers: YearMarker[] = [];
-    let monthOffset = now.getMonth();
+    let monthOffset = now.getMonth() + 1;
 
     for (let year = TIMELINE_START; year <= presentYear; year++) {
       yearMarkers.push({ yearLabel: year.toString(), offset: monthOffset });
@@ -26,7 +26,6 @@ function ExperienceTimeline() {
 
     return yearMarkers;
   }
-
   const yearMarkers: YearMarker[] = getYearMarkers();
 
   const yearMarkerVariants: Variants = {
@@ -81,6 +80,7 @@ function ExperienceTimeline() {
       >
         {(yearMarkers as YearMarker[]).map((marker) => (
           <motion.span
+            key={marker.yearLabel}
             variants={markerVariants}
             style={{ gridColumn: `${marker.offset}` }}
           >
