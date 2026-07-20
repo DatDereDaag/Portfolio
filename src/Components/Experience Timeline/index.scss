@@ -10,18 +10,31 @@
   z-index: 3;
 }
 
-.year-markers {
+.timeline-grid {
   position: absolute;
-  top: 45%;
+  inset: 0;
+  margin: auto;
 
   display: grid;
   grid-auto-flow: column;
-  grid-template-rows: auto;
-  grid-auto-columns: auto;
+
+  width: 95%;
+
+  z-index: 4;
+}
+
+.year-markers {
+  position: absolute;
+  margin: auto;
+  top: 45%;
+
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
   align-items: end;
   justify-items: end;
 
-  width: 97.2%;
+  width: 100%;
 
   span {
     font-size: 2.4vh;
@@ -35,8 +48,9 @@
 
 .experience-container {
   position: absolute;
-  inset: 0;
-  margin: auto;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
 
   width: 95%;
   height: 70%;

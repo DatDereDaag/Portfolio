@@ -72,33 +72,24 @@ function ExperienceTimeline() {
           stroke-linecap="round"
         />
       </svg>
-      <motion.div
-        variants={yearMarkerVariants}
-        initial="hidden"
-        whileInView="visible"
-        className="year-markers"
-      >
-        {(yearMarkers as YearMarker[]).map((marker) => (
-          <motion.span
-            key={marker.yearLabel}
-            variants={markerVariants}
-            style={{ gridColumn: `${marker.offset}` }}
-          >
-            {marker.yearLabel}
-          </motion.span>
-        ))}
-      </motion.div>
-      <div className="experience-container">
-        <div className="experience-marker">
-          <div className="marker-header">IT Intern</div>
-          <div className="marker-body"></div>
-          <div className="marker-area"></div>
-        </div>
-        <div className="experience-marker">
-          <div className="marker-header">Helpdesk Assistant</div>
-          <div className="marker-body"></div>
-          <div className="marker-area"></div>
-        </div>
+      <div className="timeline-grid">
+        <motion.div
+          variants={yearMarkerVariants}
+          initial="hidden"
+          whileInView="visible"
+          className="year-markers"
+        >
+          {(yearMarkers as YearMarker[]).map((marker) => (
+            <motion.span
+              key={marker.yearLabel}
+              variants={markerVariants}
+              style={{ gridColumn: `${marker.offset}` }}
+            >
+              {marker.yearLabel}
+            </motion.span>
+          ))}
+        </motion.div>
+        <div className="experience-container"></div>
       </div>
     </>
   );
