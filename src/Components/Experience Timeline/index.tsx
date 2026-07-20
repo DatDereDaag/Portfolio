@@ -70,9 +70,17 @@ function ExperienceTimeline() {
         />
       </svg>
       <div className="year-container">
-        {(yearMarkers as YearMarker[]).map((marker) => (
+        {(yearMarkers as YearMarker[]).map((marker, index) => (
           <motion.div
             key={marker.yearLabel}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{
+              duration: TIMELINE_YEAR_ANIMATION_DURATION / yearMarkers.length,
+              delay:
+                (TIMELINE_YEAR_ANIMATION_DURATION / yearMarkers.length) * index,
+              ease: "easeInOut",
+            }}
             className="year-marker"
             style={{ left: `${(marker.offset / totalMonths) * 95.7}%` }}
           >
