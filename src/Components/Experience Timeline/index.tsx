@@ -69,18 +69,15 @@ function ExperienceTimeline() {
           stroke-linecap="round"
         />
       </svg>
-      <div
-        className="year-grid"
-        style={{ gridTemplateColumns: `repeat(${totalMonths}, 1fr)` }}
-      >
+      <div className="year-container">
         {(yearMarkers as YearMarker[]).map((marker) => (
-          <motion.span
+          <motion.div
             key={marker.yearLabel}
             className="year-marker"
-            style={{ gridColumn: `${marker.offset}` }}
+            style={{ left: `${(marker.offset / totalMonths) * 95.7}%` }}
           >
             {marker.yearLabel}
-          </motion.span>
+          </motion.div>
         ))}
       </div>
       <div

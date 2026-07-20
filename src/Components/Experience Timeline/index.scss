@@ -10,29 +10,22 @@
   z-index: 4;
 }
 
-.year-grid {
+.year-container {
   position: absolute;
   inset: 0;
   margin: auto;
-  bottom: 5%;
 
-  display: grid;
-  grid-auto-flow: column;
-
-  width: 94.8%;
+  width: 95%;
 
   .year-marker {
-    align-self: center;
-    justify-self: end;
+    position: absolute;
+    top: 45%;
 
     font-size: 2.4vh;
     font-family: $main-font;
     color: $text-colour;
     white-space: nowrap;
-
-    z-index: 4;
   }
-
   z-index: 4;
 }
 
@@ -42,7 +35,6 @@
   margin: auto;
 
   display: grid;
-  grid-auto-flow: column;
 
   height: 60%;
   width: 94.8%;
