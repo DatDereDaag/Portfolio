@@ -7,10 +7,36 @@
   width: 95%;
   height: 100%;
 
-  z-index: 3;
+  z-index: 4;
 }
 
-.timeline-grid {
+.year-grid {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  bottom: 5%;
+
+  display: grid;
+  grid-auto-flow: column;
+
+  width: 94.8%;
+
+  .year-marker {
+    align-self: center;
+    justify-self: end;
+
+    font-size: 2.4vh;
+    font-family: $main-font;
+    color: $text-colour;
+    white-space: nowrap;
+
+    z-index: 4;
+  }
+
+  z-index: 4;
+}
+
+.experience-grid {
   position: absolute;
   inset: 0;
   margin: auto;
@@ -18,64 +44,51 @@
   display: grid;
   grid-auto-flow: column;
 
-  width: 95%;
+  height: 60%;
+  width: 94.8%;
 
-  z-index: 4;
+  z-index: 3;
 }
 
-.year-markers {
-  position: absolute;
-  margin: auto;
-  top: 45%;
-
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: subgrid;
-  align-items: end;
-  justify-items: end;
-
+.experience-region {
+  height: 50%;
   width: 100%;
 
-  span {
+  background: $main-gradient;
+
+  z-index: 3;
+
+  &.above {
+    align-self: start;
+    border-radius: 15px 15px 0px 0px;
+  }
+
+  &.below {
+    align-self: end;
+    border-radius: 0px 0px 15px 15px;
+  }
+}
+
+.experience-marker {
+  .marker-header {
+    clip-path: $experience-card-shape;
+    background: $main-gradient;
+    color: white;
+
+    padding: 1vh 4vh 2vh 4vh;
+
     font-size: 2.4vh;
     font-family: $main-font;
     color: $text-colour;
-    white-space: nowrap;
+
+    z-index: 7;
   }
 
-  z-index: 4;
-}
+  .marker-body {
+    z-index: 6;
+  }
 
-.experience-container {
-  position: absolute;
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: subgrid;
-
-  width: 95%;
-  height: 70%;
-
-  .experience-marker {
-    .marker-header {
-      clip-path: $experience-card-shape;
-      background: $main-gradient;
-      color: white;
-
-      padding: 1vh 4vh 2vh 4vh;
-
-      font-size: 2.4vh;
-      font-family: $main-font;
-      color: $text-colour;
-
-      z-index: 7;
-    }
-
-    .marker-body {
-      z-index: 6;
-    }
-
-    .marker-area {
-      z-index: 5;
-    }
+  .marker-area {
+    z-index: 5;
   }
 }

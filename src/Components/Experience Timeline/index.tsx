@@ -2,6 +2,9 @@ import "./index.scss";
 
 import { motion, Variants } from "framer-motion";
 
+import { Experience } from "../../types/experience";
+import experiences from "../../data/experiences.json";
+
 interface YearMarker {
   yearLabel: string;
   offset: number;
@@ -15,39 +18,33 @@ function ExperienceTimeline() {
     const now = new Date();
     const presentYear = now.getFullYear();
     const yearMarkers: YearMarker[] = [];
-    let monthOffset = now.getMonth() + 1;
+    let monthOffset = 0;
 
     for (let year = TIMELINE_START; year <= presentYear; year++) {
       yearMarkers.push({ yearLabel: year.toString(), offset: monthOffset });
       monthOffset += 12;
     }
 
+    monthOffset -= now.getMonth() - 1;
+
     yearMarkers.push({ yearLabel: "Present", offset: monthOffset });
 
     return yearMarkers;
   }
   const yearMarkers: YearMarker[] = getYearMarkers();
+  const totalMonths = yearMarkers[yearMarkers.length - 1].offset;
 
-  const yearMarkerVariants: Variants = {
-    visible: {
-      transition: {
-        duration: TIMELINE_YEAR_ANIMATION_DURATION,
-        staggerChildren: TIMELINE_YEAR_ANIMATION_DURATION / yearMarkers.length,
-      },
-    },
-  };
+  function calculateMonthOffset(dateStr: string) {
+    let monthOffset = 0;
+    const startDate = new Date(dateStr);
 
-  const markerVariants: Variants = {
-    hidden: { opacity: 0, y: -15 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: TIMELINE_YEAR_ANIMATION_DURATION / yearMarkers.length,
-        ease: "easeOut",
-      },
-    },
-  };
+    monthOffset +=
+      (startDate.getFullYear() - TIMELINE_START) * 12 +
+      startDate.getMonth() +
+      1;
+
+    return monthOffset;
+  }
 
   return (
     <>
@@ -72,24 +69,33 @@ function ExperienceTimeline() {
           stroke-linecap="round"
         />
       </svg>
-      <div className="timeline-grid">
-        <motion.div
-          variants={yearMarkerVariants}
-          initial="hidden"
-          whileInView="visible"
-          className="year-markers"
-        >
-          {(yearMarkers as YearMarker[]).map((marker) => (
-            <motion.span
-              key={marker.yearLabel}
-              variants={markerVariants}
-              style={{ gridColumn: `${marker.offset}` }}
-            >
-              {marker.yearLabel}
-            </motion.span>
-          ))}
-        </motion.div>
-        <div className="experience-container"></div>
+      <div
+        className="year-grid"
+        style={{ gridTemplateColumns: `repeat(${totalMonths}, 1fr)` }}
+      >
+        {(yearMarkers as YearMarker[]).map((marker) => (
+          <motion.span
+            key={marker.yearLabel}
+            className="year-marker"
+            style={{ gridColumn: `${marker.offset}` }}
+          >
+            {marker.yearLabel}
+          </motion.span>
+        ))}
+      </div>
+      <div
+        className="experience-grid"
+        style={{ gridTemplateColumns: `repeat(${totalMonths}, 1fr)` }}
+      >
+        {(experiences as Experience[]).map((experience, index) => (
+          <div
+            className={`experience-region  ${index % 2 === 0 ? "above" : "below"} `}
+            style={{
+              gridColumnStart: calculateMonthOffset(experience.startDate),
+              gridColumnEnd: `span ${experience.monthDuration}`,
+            }}
+          ></div>
+        ))}
       </div>
     </>
   );
