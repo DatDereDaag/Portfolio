@@ -88,19 +88,24 @@ function ExperienceTimeline() {
           </motion.div>
         ))}
       </div>
-      <div
-        className="experience-grid"
-        style={{ gridTemplateColumns: `repeat(${totalMonths}, 1fr)` }}
-      >
-        {(experiences as Experience[]).map((experience, index) => (
-          <div
-            className={`experience-region  ${index % 2 === 0 ? "above" : "below"} `}
-            style={{
-              gridColumnStart: calculateMonthOffset(experience.startDate),
-              gridColumnEnd: `span ${experience.monthDuration}`,
-            }}
-          ></div>
-        ))}
+      <div className="experience-container">
+        {experiences.map((experience, i) => {
+          const leftPercent =
+            (calculateMonthOffset(experience.startDate) / totalMonths) * 100;
+          const widthPercent = (experience.monthDuration / totalMonths) * 100;
+          const isAbove = i % 2 === 0;
+
+          return (
+            <div
+              key={experience.id}
+              className={`experience-region ${isAbove ? "above" : "below"}`}
+              style={{
+                left: `${leftPercent}%`,
+                width: `${widthPercent}%`,
+              }}
+            ></div>
+          );
+        })}
       </div>
     </>
   );
