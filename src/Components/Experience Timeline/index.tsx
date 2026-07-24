@@ -109,7 +109,7 @@ function ExperienceTimeline() {
                     EXPERIENCE_ELEMENT_DELAY,
                   ease: "easeInOut",
                 }}
-                className={`experience-region ${isAbove ? "above" : "below"}`}
+                className={`experience-region ${isAbove ? "above" : "below"} ${experience.company}-colour`}
                 style={{
                   left: `${offsetPercent}%`,
                   width: `${widthPercent}%`,
@@ -136,8 +136,12 @@ function ExperienceTimeline() {
                 }}
                 className={`experience-marker ${isAbove ? "above" : "below"}`}
               >
-                <div className="marker-header">{experience.title}</div>
-                <div className="marker-body"></div>
+                <div className={`marker-header ${isAbove ? "above" : "below"}`}>
+                  {experience.title}
+                </div>
+                <div className={`marker-body ${isAbove ? "above" : "below"}`}>
+                  <span>{experience.company}</span>
+                </div>
               </motion.div>
             </div>
           );

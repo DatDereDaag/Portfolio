@@ -48,10 +48,9 @@
   top: 50%;
   height: 18vh;
 
-  background: $surface-colour;
   box-shadow:
-    rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    rgba(0, 0, 0, 0.16) 0px 3px 6px,
+    rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
   z-index: 3;
 
@@ -68,7 +67,7 @@
   .experience-image {
     width: auto;
     height: 12vh;
-    opacity: 0.2;
+    opacity: 0.25;
   }
 
   .overlay-color {
@@ -89,51 +88,82 @@
 
 .experience-marker {
   position: absolute;
+  display: flex;
 
   &.above {
     top: 8%;
+    flex-direction: column;
   }
 
   &.below {
     bottom: 8%;
+    flex-direction: column-reverse;
   }
 
   cursor: pointer;
-  .marker-header {
-    clip-path: $experience-card-shape;
-    background: $main-gradient;
-    color: white;
+  z-index: 7;
+}
 
-    width: 16vw;
-    padding: 1vh 0.8vh;
-    text-align: center;
+.marker-header {
+  position: relative;
+  background: $main-gradient;
+  color: white;
 
-    font-size: 3vh;
-    font-family: $main-font;
-    font-weight: 600;
-    color: $text-colour;
+  width: 16vw;
+  padding: 1vh 0.8vh;
+  text-align: center;
 
-    box-shadow:
-      rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  font-size: 3vh;
+  font-family: $main-font;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: white;
 
-    z-index: 7;
+  box-shadow:
+    rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+  &.above {
+    clip-path: $experience-card-shape-top;
   }
 
-  .marker-body {
-    background: $surface-colour;
-
-    width: 16vw;
-
-    z-index: 6;
-
-    &.above {
-      transform: translateY(-100%);
-    }
-
-    &.below {
-      transform: translateY(0%);
-    }
+  &.below {
+    clip-path: $experience-card-shape-bottom;
   }
+
+  z-index: 7;
+}
+
+.marker-body {
+  position: relative;
+  background: $surface-colour;
+
+  width: max-content;
+  padding: 1vh 2.5vh;
+
+  text-align: center;
+  font-family: $main-font;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 2.5vh;
+  color: $text-colour;
+
+  margin-left: 0.8vw;
+
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+  &.above {
+    clip-path: $experience-card-shape-bottom;
+  }
+
+  &.below {
+    clip-path: $experience-card-shape-top;
+  }
+
   z-index: 6;
 }
