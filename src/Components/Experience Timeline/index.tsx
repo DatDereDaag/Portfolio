@@ -74,8 +74,8 @@ function ExperienceTimeline() {
         {(yearMarkers as YearMarker[]).map((marker, index) => (
           <motion.div
             key={marker.yearLabel}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: -40 }}
+            whileInView={{ opacity: 1, y: -22 }}
             transition={{
               duration: TIMELINE_YEAR_ANIMATION_DURATION / yearMarkers.length,
               delay:
