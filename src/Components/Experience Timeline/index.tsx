@@ -13,6 +13,7 @@ interface YearMarker {
 function ExperienceTimeline() {
   const TIMELINE_START = 2025;
   const TIMELINE_YEAR_ANIMATION_DURATION = 1.05;
+  const EXPERIENCE_ELEMENT_DELAY = 0.4;
 
   function getYearMarkers(): YearMarker[] {
     const now = new Date();
@@ -96,26 +97,48 @@ function ExperienceTimeline() {
           const isAbove = index % 2 === 0;
 
           return (
-            <motion.div
-              key={experience.id}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{
-                duration: TIMELINE_YEAR_ANIMATION_DURATION / experiences.length,
-                delay: (TIMELINE_YEAR_ANIMATION_DURATION * offsetPercent) / 100,
-                ease: "easeInOut",
-              }}
-              className={`experience-region ${isAbove ? "above" : "below"}`}
-              style={{
-                left: `${offsetPercent}%`,
-                width: `${widthPercent}%`,
-              }}
-            >
-              <img className="experience-image" src={experience.companyImage} />
-              <div
-                className={`overlay-color ${isAbove ? "above" : "below"} ${experience.company}-gradient`}
-              ></div>
-            </motion.div>
+            <div key={experience.id}>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{
+                  duration:
+                    TIMELINE_YEAR_ANIMATION_DURATION / experiences.length,
+                  delay:
+                    (TIMELINE_YEAR_ANIMATION_DURATION * offsetPercent) / 100 +
+                    EXPERIENCE_ELEMENT_DELAY,
+                  ease: "easeInOut",
+                }}
+                className={`experience-region ${isAbove ? "above" : "below"}`}
+                style={{
+                  left: `${offsetPercent}%`,
+                  width: `${widthPercent}%`,
+                }}
+              >
+                <img
+                  className="experience-image"
+                  src={experience.companyImage}
+                />
+                <div
+                  className={`overlay-color ${isAbove ? "above" : "below"} ${experience.company}-gradient`}
+                ></div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, left: `${offsetPercent - 5}%` }}
+                whileInView={{ opacity: 1, left: `${offsetPercent - 3.2}%` }}
+                transition={{
+                  duration:
+                    TIMELINE_YEAR_ANIMATION_DURATION / experiences.length,
+                  delay:
+                    (TIMELINE_YEAR_ANIMATION_DURATION * offsetPercent) / 100 +
+                    EXPERIENCE_ELEMENT_DELAY,
+                  ease: "easeInOut",
+                }}
+                className={`experience-marker ${isAbove ? "above" : "below"}`}
+              >
+                <div className="marker-header">{experience.title}</div>
+              </motion.div>
+            </div>
           );
         })}
       </div>

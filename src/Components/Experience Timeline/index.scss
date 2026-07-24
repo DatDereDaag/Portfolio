@@ -88,14 +88,24 @@
 }
 
 .experience-marker {
+  position: absolute;
+
+  &.above {
+    top: 11%;
+  }
+
+  &.below {
+    bottom: 11%;
+  }
+
   .marker-header {
     clip-path: $experience-card-shape;
     background: $main-gradient;
     color: white;
 
-    padding: 1vh 4vh 2vh 4vh;
+    padding: 1.2vh 4vh;
 
-    font-size: 2.4vh;
+    font-size: 3vh;
     font-family: $main-font;
     color: $text-colour;
 
@@ -105,8 +115,5 @@
   .marker-body {
     z-index: 6;
   }
-
-  .marker-area {
-    z-index: 5;
-  }
+  z-index: 5;
 }
