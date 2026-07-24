@@ -1,6 +1,6 @@
 import "./index.scss";
 
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { Experience } from "../../types/experience";
 import experiences from "../../data/experiences.json";
@@ -137,6 +137,7 @@ function ExperienceTimeline() {
                 className={`experience-marker ${isAbove ? "above" : "below"}`}
               >
                 <div className="marker-header">{experience.title}</div>
+                <div className="marker-body"></div>
               </motion.div>
             </div>
           );

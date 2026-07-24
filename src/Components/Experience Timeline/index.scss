@@ -5,7 +5,7 @@
   inset: 0;
   margin: auto;
   width: 95%;
-  height: 100%;
+  height: min-content;
 
   z-index: 4;
 }
@@ -16,10 +16,11 @@
   margin: auto;
 
   width: 95%;
+  height: min-content;
 
   .year-marker {
     position: absolute;
-    top: 45%;
+    transform: translateY(-100%);
 
     font-size: 2.4vh;
     font-family: $main-font;
@@ -48,7 +49,7 @@
   top: 50%;
   height: 18vh;
 
-  background: rgba(66, 63, 63, 0.374);
+  background: $surface-colour;
   box-shadow:
     rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
@@ -91,29 +92,41 @@
   position: absolute;
 
   &.above {
-    top: 11%;
+    top: 8%;
   }
 
   &.below {
-    bottom: 11%;
+    bottom: 8%;
   }
 
+  cursor: pointer;
   .marker-header {
     clip-path: $experience-card-shape;
     background: $main-gradient;
     color: white;
 
-    padding: 1.2vh 4vh;
+    width: 16vw;
+    padding: 1vh 0.8vh;
+    text-align: center;
 
     font-size: 3vh;
     font-family: $main-font;
+    font-weight: 600;
     color: $text-colour;
+
+    box-shadow:
+      rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
     z-index: 7;
   }
 
   .marker-body {
+    background: $surface-colour;
+
+    width: 16vw;
+
     z-index: 6;
   }
-  z-index: 5;
+  z-index: 6;
 }
