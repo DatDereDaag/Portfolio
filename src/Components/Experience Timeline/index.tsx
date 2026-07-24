@@ -90,17 +90,24 @@ function ExperienceTimeline() {
       </div>
       <div className="experience-container">
         {(experiences as Experience[]).map((experience, index) => {
-          const leftPercent =
+          const offsetPercent =
             (calculateMonthOffset(experience.startDate) / totalMonths) * 100;
           const widthPercent = (experience.monthDuration / totalMonths) * 100;
           const isAbove = index % 2 === 0;
 
           return (
-            <div
+            <motion.div
               key={experience.id}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{
+                duration: TIMELINE_YEAR_ANIMATION_DURATION / experiences.length,
+                delay: (TIMELINE_YEAR_ANIMATION_DURATION * offsetPercent) / 100,
+                ease: "easeInOut",
+              }}
               className={`experience-region ${isAbove ? "above" : "below"}`}
               style={{
-                left: `${leftPercent}%`,
+                left: `${offsetPercent}%`,
                 width: `${widthPercent}%`,
               }}
             >
@@ -108,7 +115,7 @@ function ExperienceTimeline() {
               <div
                 className={`overlay-color ${isAbove ? "above" : "below"} ${experience.company}-gradient`}
               ></div>
-            </div>
+            </motion.div>
           );
         })}
       </div>
