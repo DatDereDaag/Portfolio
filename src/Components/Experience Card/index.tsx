@@ -22,11 +22,29 @@ function ExperienceCard({
   animationDelay,
 }: ExperienceCardProps) {
   const monthAnimation = useAnimation();
+  const markerAnimation = useAnimation();
+  const regionAnimation = useAnimation();
 
   function handleHoverStart() {
     monthAnimation.start({
       opacity: [0, 1],
       y: [null, 0],
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    });
+
+    markerAnimation.start({
+      scale: [1, 1.05],
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    });
+
+    regionAnimation.start({
+      filter: "brightness(2)",
       transition: {
         duration: 0.3,
         ease: "easeInOut",
@@ -43,6 +61,20 @@ function ExperienceCard({
         ease: "easeInOut",
       },
     });
+    markerAnimation.start({
+      scale: 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    });
+    regionAnimation.start({
+      filter: "brightness(1)",
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    });
   }
 
   return (
@@ -53,13 +85,14 @@ function ExperienceCard({
       onHoverEnd={handleHoverEnd}
     >
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 0, filter: "brightness(1)" }}
         whileInView={{ opacity: 1 }}
         transition={{
           duration: animationDuration,
           delay: animationDelay,
           ease: "easeInOut",
         }}
+        animate={regionAnimation}
         className={`experience-region ${isAbove ? "above" : "below"} ${experience.company}-colour`}
         style={{
           left: `${offsetPercent}%`,
@@ -79,6 +112,7 @@ function ExperienceCard({
           delay: animationDelay,
           ease: "easeInOut",
         }}
+        animate={markerAnimation}
         className={`experience-marker ${isAbove ? "above" : "below"}`}
       >
         <div className={`marker-header ${isAbove ? "above" : "below"}`}>
