@@ -2,8 +2,9 @@ import "./index.scss";
 
 import { motion } from "framer-motion";
 
-import { Experience } from "../../types/experience";
 import experiences from "../../data/experiences.json";
+import { Experience } from "../../types/experience";
+import ExperienceCard from "../Experience Card";
 
 interface YearMarker {
   yearLabel: string;
@@ -95,55 +96,22 @@ function ExperienceTimeline() {
             (calculateMonthOffset(experience.startDate) / totalMonths) * 100;
           const widthPercent = (experience.monthDuration / totalMonths) * 100;
           const isAbove = index % 2 === 0;
+          const animationDuration =
+            TIMELINE_YEAR_ANIMATION_DURATION / experiences.length;
+          const animationDelay =
+            (TIMELINE_YEAR_ANIMATION_DURATION * offsetPercent) / 100 +
+            EXPERIENCE_ELEMENT_DELAY;
 
           return (
-            <div key={experience.id}>
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{
-                  duration:
-                    TIMELINE_YEAR_ANIMATION_DURATION / experiences.length,
-                  delay:
-                    (TIMELINE_YEAR_ANIMATION_DURATION * offsetPercent) / 100 +
-                    EXPERIENCE_ELEMENT_DELAY,
-                  ease: "easeInOut",
-                }}
-                className={`experience-region ${isAbove ? "above" : "below"} ${experience.company}-colour`}
-                style={{
-                  left: `${offsetPercent}%`,
-                  width: `${widthPercent}%`,
-                }}
-              >
-                <img
-                  className="experience-image"
-                  src={experience.companyImage}
-                />
-                <div
-                  className={`overlay-color ${isAbove ? "above" : "below"} ${experience.company}-gradient`}
-                ></div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, left: `${offsetPercent - 5}%` }}
-                whileInView={{ opacity: 1, left: `${offsetPercent - 3.2}%` }}
-                transition={{
-                  duration:
-                    TIMELINE_YEAR_ANIMATION_DURATION / experiences.length,
-                  delay:
-                    (TIMELINE_YEAR_ANIMATION_DURATION * offsetPercent) / 100 +
-                    EXPERIENCE_ELEMENT_DELAY,
-                  ease: "easeInOut",
-                }}
-                className={`experience-marker ${isAbove ? "above" : "below"}`}
-              >
-                <div className={`marker-header ${isAbove ? "above" : "below"}`}>
-                  {experience.title}
-                </div>
-                <div className={`marker-body ${isAbove ? "above" : "below"}`}>
-                  <span>{experience.company}</span>
-                </div>
-              </motion.div>
-            </div>
+            <ExperienceCard
+              key={experience.id}
+              experience={experience}
+              offsetPercent={offsetPercent}
+              isAbove={isAbove}
+              widthPercent={widthPercent}
+              animationDuration={animationDuration}
+              animationDelay={animationDelay}
+            />
           );
         })}
       </div>

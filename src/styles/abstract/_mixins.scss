@@ -1,0 +1,8 @@
+@mixin timeline-setup {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 95%;
+  height: min-content;
+  z-index: 4;
+}

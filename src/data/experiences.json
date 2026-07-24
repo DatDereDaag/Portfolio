@@ -4,7 +4,8 @@
     "title": "IT Intern",
     "company": "Scotiabank",
     "startDate": "2025-06",
-    "endDate": "2025-08",
+    "startMonth": "Jun",
+    "endMonth": "Aug",
     "monthDuration": 3,
     "companyImage": "src/assets/images/companies/Scotiabank.png"
   },
@@ -13,7 +14,8 @@
     "title": "Helpdesk Assistant",
     "company": "UWI-DCIT",
     "startDate": "2025-09",
-    "endDate": "2026-03",
+    "startMonth": "Sep",
+    "endMonth": "Mar",
     "monthDuration": 7,
     "companyImage": "src/assets/images/companies/UWI.png"
   }

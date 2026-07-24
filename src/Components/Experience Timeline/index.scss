@@ -1,22 +1,11 @@
 @use "../../styles/index" as *;
 
 .timeline {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 95%;
-  height: min-content;
-
-  z-index: 4;
+  @include timeline-setup;
 }
 
 .year-container {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-
-  width: 95%;
-  height: min-content;
+  @include timeline-setup;
 
   .year-marker {
     position: absolute;
@@ -26,7 +15,6 @@
     color: $text-colour;
     white-space: nowrap;
   }
-  z-index: 4;
 }
 
 .experience-container {
@@ -37,133 +25,4 @@
   width: 95%;
 
   z-index: 3;
-}
-
-.experience-region {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  top: 50%;
-  height: 18vh;
-
-  box-shadow:
-    rgba(0, 0, 0, 0.16) 0px 3px 6px,
-    rgba(0, 0, 0, 0.23) 0px 3px 6px;
-
-  z-index: 3;
-
-  &.above {
-    transform: translateY(-100%);
-    border-radius: 15px 15px 0px 0px;
-  }
-
-  &.below {
-    transform: translateY(0%);
-    border-radius: 0px 0px 15px 15px;
-  }
-
-  .experience-image {
-    width: auto;
-    height: 12vh;
-    opacity: 0.25;
-  }
-
-  .overlay-color {
-    position: absolute;
-    inset: 0;
-
-    &.above {
-      border-radius: 15px 15px 0px 0px;
-    }
-
-    &.below {
-      border-radius: 0px 0px 15px 15px;
-    }
-
-    z-index: 4;
-  }
-}
-
-.experience-marker {
-  position: absolute;
-  display: flex;
-
-  &.above {
-    top: 8%;
-    flex-direction: column;
-  }
-
-  &.below {
-    bottom: 8%;
-    flex-direction: column-reverse;
-  }
-
-  cursor: pointer;
-  z-index: 7;
-}
-
-.marker-header {
-  position: relative;
-  background: $main-gradient;
-  color: white;
-
-  width: 16vw;
-  padding: 1vh 0.8vh;
-  text-align: center;
-
-  font-size: 3vh;
-  font-family: $main-font;
-  font-weight: 600;
-  letter-spacing: 0.2px;
-  color: white;
-
-  box-shadow:
-    rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-
-  &.above {
-    clip-path: $experience-card-shape-top;
-  }
-
-  &.below {
-    clip-path: $experience-card-shape-bottom;
-  }
-
-  z-index: 7;
-}
-
-.marker-body {
-  position: relative;
-  background: $surface-colour;
-
-  width: max-content;
-  padding: 1vh 2.5vh;
-
-  text-align: center;
-  font-family: $main-font;
-  font-style: italic;
-  font-weight: 600;
-  font-size: 2.5vh;
-  color: $text-colour;
-
-  margin-left: 0.8vw;
-
-  box-shadow:
-    rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px,
-    rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px,
-    rgba(0, 0, 0, 0.09) 0px -3px 5px;
-
-  &.above {
-    clip-path: $experience-card-shape-bottom;
-  }
-
-  &.below {
-    clip-path: $experience-card-shape-top;
-  }
-
-  z-index: 6;
 }

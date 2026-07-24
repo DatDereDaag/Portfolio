@@ -3,7 +3,8 @@ export interface Experience {
   title: string;
   company: string;
   startDate: string;
-  endDate: string;
+  startMonth: string;
+  endMonth: string;
   monthDuration: number;
   companyImage: string;
 }
