@@ -89,11 +89,11 @@ function ExperienceTimeline() {
         ))}
       </div>
       <div className="experience-container">
-        {experiences.map((experience, i) => {
+        {(experiences as Experience[]).map((experience, index) => {
           const leftPercent =
             (calculateMonthOffset(experience.startDate) / totalMonths) * 100;
           const widthPercent = (experience.monthDuration / totalMonths) * 100;
-          const isAbove = i % 2 === 0;
+          const isAbove = index % 2 === 0;
 
           return (
             <div
@@ -103,7 +103,12 @@ function ExperienceTimeline() {
                 left: `${leftPercent}%`,
                 width: `${widthPercent}%`,
               }}
-            ></div>
+            >
+              <img className="experience-image" src={experience.companyImage} />
+              <div
+                className={`overlay-color ${isAbove ? "above" : "below"} ${experience.company}-gradient`}
+              ></div>
+            </div>
           );
         })}
       </div>

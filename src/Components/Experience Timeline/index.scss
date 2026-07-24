@@ -41,10 +41,15 @@
 
 .experience-region {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   top: 50%;
   height: 18vh;
 
-  background: $main-gradient;
+  background: rgba(60, 57, 57, 0.374);
+  border: 0.2px solid rgba(255, 255, 255, 0.1);
 
   z-index: 3;
 
@@ -56,6 +61,27 @@
   &.below {
     transform: translateY(0%);
     border-radius: 0px 0px 15px 15px;
+  }
+
+  .experience-image {
+    width: auto;
+    height: 12vh;
+    opacity: 0.2;
+  }
+
+  .overlay-color {
+    position: absolute;
+    inset: 0;
+
+    &.above {
+      border-radius: 15px 15px 0px 0px;
+    }
+
+    &.below {
+      border-radius: 0px 0px 15px 15px;
+    }
+
+    z-index: 4;
   }
 }
 
