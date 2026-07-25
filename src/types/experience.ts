@@ -7,4 +7,5 @@ export interface Experience {
   endMonth: string;
   monthDuration: number;
   companyImage: string;
+  experienceBullets: string[];
 }

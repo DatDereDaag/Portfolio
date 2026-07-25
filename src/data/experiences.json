@@ -7,7 +7,13 @@
     "startMonth": "Jun",
     "endMonth": "Aug",
     "monthDuration": 3,
-    "companyImage": "src/assets/images/companies/Scotiabank.png"
+    "companyImage": "src/assets/images/companies/Scotiabank.png",
+    "experienceBullets": [
+      "1st & 2nd level support",
+      "Managed infrastructural upgrades",
+      "Vulnerability management",
+      "User & device management"
+    ]
   },
   {
     "id": "dict-helpdesk-assistant",
@@ -17,6 +23,12 @@
     "startMonth": "Sep",
     "endMonth": "Mar",
     "monthDuration": 7,
-    "companyImage": "src/assets/images/companies/UWI.png"
+    "companyImage": "src/assets/images/companies/UWI.png",
+    "experienceBullets": [
+      "Simplified complex CS concepts",
+      "Troubleshooted technical problems",
+      "Strengthend student's understanding",
+      "Maintained a supportive environment"
+    ]
   }
 ]

@@ -1,5 +1,5 @@
 import "./index.scss";
-
+import { FiCheckCircle } from "react-icons/fi";
 import { motion, useAnimation } from "framer-motion";
 
 import { Experience } from "../../types/experience";
@@ -24,25 +24,25 @@ function ExperienceCard({
   const monthAnimation = useAnimation();
   const markerAnimation = useAnimation();
   const regionAnimation = useAnimation();
+  const descriptionAnimation = useAnimation();
+  const bulletAnimation = useAnimation();
 
   function handleHoverStart() {
     monthAnimation.start({
-      opacity: [0, 1],
+      opacity: 1,
       y: [null, 0],
       transition: {
         duration: 0.3,
         ease: "easeInOut",
       },
     });
-
     markerAnimation.start({
-      scale: [1, 1.05],
+      scale: 1.05,
       transition: {
         duration: 0.3,
         ease: "easeInOut",
       },
     });
-
     regionAnimation.start({
       filter: "brightness(2)",
       transition: {
@@ -50,6 +50,23 @@ function ExperienceCard({
         ease: "easeInOut",
       },
     });
+    descriptionAnimation.start({
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+        delay: 0.1,
+      },
+    });
+    bulletAnimation.start((index) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+        delay: 0.12 * (index + 1),
+      },
+    }));
   }
 
   function handleHoverEnd() {
@@ -72,6 +89,21 @@ function ExperienceCard({
       filter: "brightness(1)",
       transition: {
         duration: 0.3,
+        ease: "easeInOut",
+      },
+    });
+    descriptionAnimation.start({
+      opacity: 0,
+      transition: {
+        duration: 0.15,
+        ease: "easeInOut",
+      },
+    });
+    bulletAnimation.start({
+      opacity: 0,
+      x: -10,
+      transition: {
+        duration: 0.15,
         ease: "easeInOut",
       },
     });
@@ -136,6 +168,24 @@ function ExperienceCard({
         >
           {experience.endMonth}
         </div>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={descriptionAnimation}
+        className={`experience-description ${isAbove ? "above" : "below"}`}
+        style={{ left: `${offsetPercent + 13}%` }}
+      >
+        {(experience.experienceBullets as string[]).map((bullet, index) => (
+          <motion.div
+            className="bullet-item"
+            initial={{ opacity: 0, x: -10 }}
+            animate={bulletAnimation}
+            custom={index}
+          >
+            <FiCheckCircle className="bullet-icon" />
+            <span>{bullet}</span>
+          </motion.div>
+        ))}
       </motion.div>
     </motion.div>
   );
