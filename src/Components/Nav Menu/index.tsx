@@ -6,7 +6,12 @@ interface NavMenuProps {
 }
 
 function NavMenu({ selected, onSelect }: NavMenuProps) {
-  const sections: string[] = ["Projects", "Experience", "Contact", "About"];
+  const sections: string[] = [
+    "Projects",
+    "Experience",
+    "Certificates",
+    "About",
+  ];
 
   return (
     <>
