@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import "./index.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import ContentSlider from "../Content Section";
 import NavMenu from "../Nav Menu";
 
@@ -55,18 +53,19 @@ function Home() {
           <a
             target="_blank"
             rel="noreferrer"
-            className="linkedin-icon"
             href="https://www.linkedin.com/in/arvesh-gosine-01b67b2b2/"
           >
-            <FontAwesomeIcon icon={faLinkedin} />
+            <img src="https://skillicons.dev/icons?i=linkedin" alt="linkedin" />
           </a>
           <a
             target="_blank"
             rel="noreferrer"
-            className="github-icon"
             href="https://github.com/DatDereDaag"
           >
-            <FontAwesomeIcon icon={faGithub} />
+            <img src="https://skillicons.dev/icons?i=github" alt="github" />
+          </a>
+          <a rel="noreferrer" href="mailto:arveshgosine04@gmail.com">
+            <img src="https://skillicons.dev/icons?i=gmail" alt="gmail" />
           </a>
         </div>
       </div>

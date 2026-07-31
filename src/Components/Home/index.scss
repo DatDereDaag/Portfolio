@@ -15,7 +15,7 @@
     letter-spacing: -1.74px;
     line-height: 50px;
     font-style: italic;
-    margin: 5vh 0px 5vh 0px;
+    margin: 5vh 0px 4vh 0px;
   }
 
   .bottom-hero-font {
@@ -30,22 +30,15 @@
     padding: 5px;
     font-size: 50px;
 
-    .linkedin-icon {
-      color: grey;
-      transition: all 0.3s ease-in-out;
+    a {
+      filter: grayscale(100%);
+      transition: all 0.25s ease-in-out;
     }
 
-    .linkedin-icon:hover {
-      color: #0077b5;
-    }
-
-    .github-icon {
-      color: grey;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .github-icon:hover {
-      color: white;
+    a:hover {
+      filter: grayscale(0%);
+      scale: 1.1;
     }
   }
+  z-index: 10;
 }
