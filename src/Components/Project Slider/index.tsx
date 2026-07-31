@@ -1,6 +1,8 @@
 import ProjectCard from "../Project Card";
 import "./index.scss";
 
+import { motion, MotionProps } from "framer-motion";
+
 import { useEffect, useRef } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
@@ -75,19 +77,42 @@ function ProjectSlider() {
     }, 550);
   }
 
+  const arrowAnimation: MotionProps = {
+    initial: { opacity: 0 },
+    whileInView: { opacity: 1 },
+    transition: { duration: 0.3, delay: 0.2, ease: "easeInOut" },
+  };
+
   return (
     <>
-      <button className="slider-arrow left" onClick={() => scroll("left")}>
+      <motion.button
+        {...arrowAnimation}
+        className="slider-arrow left"
+        onClick={() => scroll("left")}
+      >
         <FiChevronLeft />
-      </button>
-      <button className="slider-arrow right" onClick={() => scroll("right")}>
+      </motion.button>
+      <motion.button
+        {...arrowAnimation}
+        className="slider-arrow right"
+        onClick={() => scroll("right")}
+      >
         <FiChevronRight />
-      </button>
-      <div className="slider" ref={sliderRef}>
+      </motion.button>
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.3,
+          ease: "easeInOut",
+        }}
+        className="slider"
+        ref={sliderRef}
+      >
         {(clonedProjects as Project[]).map((project, index) => (
           <ProjectCard key={project.id + "." + index} project={project} />
         ))}
-      </div>
+      </motion.div>
     </>
   );
 }

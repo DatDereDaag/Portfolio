@@ -25,20 +25,12 @@ function ContentSlider({ selected }: ContentSliderProps) {
       </h1>
       <div className="divider"></div>
       <div className="content-background">
-        <AnimatePresence>
-          <motion.div
-            key={selected}
-            initial={{ opacity: 0, y: 0 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 0 }}
-            transition={{ duration: 0.15 }}
-          >
-            {selected === "Projects" && <ProjectSlider />}
-            {selected === "Experience" && <ExperienceTimeline />}
-            {selected === "Certificates" && <></>}
-            {selected === "Contact" && <></>}
-          </motion.div>
-        </AnimatePresence>
+        <div key={selected}>
+          {selected === "Projects" && <ProjectSlider />}
+          {selected === "Experience" && <ExperienceTimeline />}
+          {selected === "Certificates" && <></>}
+          {selected === "Contact" && <></>}
+        </div>
       </div>
     </div>
   );
