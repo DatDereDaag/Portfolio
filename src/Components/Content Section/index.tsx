@@ -2,6 +2,7 @@ import "./index.scss";
 import { AnimatePresence, motion } from "framer-motion";
 import ProjectSlider from "../Project Slider";
 import ExperienceTimeline from "../Experience Timeline";
+import AboutSection from "../About Section";
 
 interface ContentSliderProps {
   selected: string;
@@ -25,12 +26,9 @@ function ContentSlider({ selected }: ContentSliderProps) {
       </h1>
       <div className="divider"></div>
       <div className="content-background">
-        <div key={selected}>
-          {selected === "Projects" && <ProjectSlider />}
-          {selected === "Experience" && <ExperienceTimeline />}
-          {selected === "Certificates" && <></>}
-          {selected === "Contact" && <></>}
-        </div>
+        {selected === "Projects" && <ProjectSlider />}
+        {selected === "Experience" && <ExperienceTimeline />}
+        {selected === "About" && <AboutSection />}
       </div>
     </div>
   );

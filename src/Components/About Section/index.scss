@@ -1,0 +1,27 @@
+@use "../../styles/index" as *;
+
+.about-container {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  height: 90%;
+
+  margin-left: 7.5vh;
+  gap: 10vw;
+}
+
+.background-shapes {
+  position: fixed;
+}
+
+.bio-section {
+  flex: 1;
+  margin-top: 5vh;
+}
+
+.skill-section {
+  flex: 2;
+
+  .skill-header {
+  }
+}
