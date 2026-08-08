@@ -17,12 +17,16 @@ function AboutSection() {
           <h2 className="about-header">EDUCATION</h2>
           <div className="education-section">
             <div className="education-details">
-              <p className="about-paragraph">BSc. Computer Science (Special)</p>
-              <p className="about-paragraph">
+              <p className="about-paragraph degree">
+                BSc. Computer Science (Special)
+              </p>
+              <p className="about-paragraph institution">
                 University of The West Indies, St. Augustine
               </p>
             </div>
-            <div className="gpa">GPA: 3.86/4.0</div>
+            <div className="gpa">
+              GPA: <span>3.86/4.0</span>
+            </div>
           </div>
         </div>
         <h2 className="email-header">

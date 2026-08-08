@@ -78,20 +78,37 @@
 
 .education-section {
   display: flex;
-  gap: 1.4vw;
+  gap: 1.5vw;
+
+  .education-details {
+    display: flex;
+    flex-direction: column;
+
+    .degree {
+      margin-bottom: -0.2vh;
+    }
+
+    .institution {
+      font-style: italic;
+      font-size: 1.05rem;
+    }
+  }
 
   .gpa {
     color: $text-colour;
     font-family: $main-font;
-    font-weight: 300;
-    font-size: 0.9rem;
-    line-height: 3vh;
+    font-weight: 900;
+    font-size: 1rem;
+
+    span {
+      font-weight: 300;
+    }
   }
 }
 
 .email-header {
   margin: 0vh;
-  margin-top: 5vh;
+  margin-top: 3vh;
 
   color: $primary-colour-two;
   font-family: $main-font;
