@@ -17,7 +17,7 @@
 .about-card {
   display: flex;
   flex-direction: column;
-  gap: 2vh;
+  gap: 2.2vh;
   flex: 1;
 
   margin-top: 7.5vh;
@@ -27,18 +27,32 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   .section {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 0.5vh;
   }
 
   .about-header {
+    position: relative;
     margin: 0vh;
+    margin-left: 0.5vw;
 
     color: $primary-colour-two;
     font-family: $main-font;
     font-weight: 800;
     font-size: 1.3rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0.5vh;
+      left: -0.5vw;
+
+      width: 0.25vw;
+      height: 2.75vh;
+      background-color: $primary-colour-two;
+    }
   }
 
   .about-paragraph {
@@ -50,10 +64,21 @@
     font-size: 1.1rem;
     line-height: 3vh;
   }
+
+  .paragraph-divider {
+    position: absolute;
+    bottom: -1.5vh;
+    right: 1vw;
+
+    width: 20%;
+    height: 0.5vh;
+    background-color: $primary-colour-two;
+  }
 }
 
 .education-section {
   display: flex;
+  gap: 1.4vw;
 
   .gpa {
     color: $text-colour;
@@ -62,6 +87,20 @@
     font-size: 0.9rem;
     line-height: 3vh;
   }
+}
+
+.email-header {
+  margin: 0vh;
+  margin-top: 5vh;
+
+  color: $primary-colour-two;
+  font-family: $main-font;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.email {
+  color: $text-colour;
 }
 
 .skill-section {

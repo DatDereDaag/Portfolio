@@ -11,6 +11,7 @@ function AboutSection() {
             Full Stack Developer integrating AI/ML solutions into web, desktop
             and mobile applications. Also proficient in Data Analytics.
           </p>
+          <div className="paragraph-divider"></div>
         </div>
         <div className="section">
           <h2 className="about-header">EDUCATION</h2>
@@ -24,8 +25,8 @@ function AboutSection() {
             <div className="gpa">GPA: 3.86/4.0</div>
           </div>
         </div>
-        <h2 className="about-header">
-          EMAIL: <span>arveshgosine04@gmail.com</span>
+        <h2 className="email-header">
+          EMAIL: <span className="email">arveshgosine04@gmail.com</span>
         </h2>
         <a className="resume-download">Resume</a>
       </div>
