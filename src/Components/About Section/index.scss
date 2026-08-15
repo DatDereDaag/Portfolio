@@ -108,16 +108,49 @@
 
 .email-header {
   margin: 0vh;
-  margin-top: 3vh;
+  margin-top: 1.5vh;
 
   color: $primary-colour-two;
   font-family: $main-font;
   font-weight: 800;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 .email {
   color: $text-colour;
+}
+
+.resume-download {
+  display: flex;
+  gap: 0.5vw;
+
+  margin-top: -1vh;
+  width: fit-content;
+
+  padding: 0.8vh 1vh;
+  border-radius: 10px;
+
+  background-color: $primary-colour-two;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+  color: white;
+  font-family: $main-font;
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-decoration: none;
+
+  .resume-download-icon {
+    font-size: 1.4rem;
+  }
+
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
+    scale: 1.04;
+  }
 }
 
 .skill-section {

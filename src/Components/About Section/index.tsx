@@ -1,4 +1,5 @@
 import "./index.scss";
+import { FiDownload } from "react-icons/fi";
 
 function AboutSection() {
   return (
@@ -32,7 +33,13 @@ function AboutSection() {
         <h2 className="email-header">
           EMAIL: <span className="email">arveshgosine04@gmail.com</span>
         </h2>
-        <a className="resume-download">Resume</a>
+        <a
+          className="resume-download"
+          href="/resume.pdf"
+          download="Arvesh_Gosine_Resume.pdf"
+        >
+          <FiDownload className="resume-download-icon" /> <span>Resume</span>
+        </a>
       </div>
       <div className="skill-section">
         <h2 className="skill-header">Skills</h2>
