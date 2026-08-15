@@ -1,0 +1,43 @@
+@use "../../styles/index" as *;
+
+.skill-section {
+  flex: 2.2;
+}
+
+.skill-header {
+  position: relative;
+  width: 15vw;
+  clip-path: $card-title-shape;
+
+  background: $main-gradient;
+
+  padding: 1vh 1vh;
+
+  text-align: center;
+
+  color: white;
+  font-family: $main-font;
+  font-size: 1.7vw;
+  font-weight: 600;
+  font-style: bold;
+  letter-spacing: 0.1px;
+
+  z-index: 8;
+}
+
+.skill-container {
+  position: relative;
+
+  top: -5vh;
+  left: 2vw;
+
+  height: 86%;
+  width: 93%;
+
+  background: rgba(41, 41, 41, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  z-index: 5;
+}

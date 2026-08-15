@@ -1,4 +1,5 @@
 import AboutCard from "../About Card";
+import SkillCard from "../Skill Card";
 import "./index.scss";
 
 function AboutSection() {
@@ -6,9 +7,7 @@ function AboutSection() {
     <div className="about-container">
       <div className="background-shapes"></div>
       <AboutCard />
-      <div className="skill-section">
-        <h2 className="skill-header">Skills</h2>
-      </div>
+      <SkillCard />
     </div>
   );
 }
